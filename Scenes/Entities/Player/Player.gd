@@ -43,6 +43,8 @@ var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
 var dash_direction: float = 1.0
 var dash_trail_timer: float = 0.0
+var camera2D : Camera2D
+var cameraShakeNoise: FastNoiseLite
 
 const DASH_TRAIL_INTERVAL: float = 0.03
 const DASH_TRAIL_FADE_TIME: float = 0.3
@@ -50,6 +52,8 @@ const DASH_TRAIL_FADE_TIME: float = 0.3
 func _ready() -> void:
 	go_to_idle_state()
 	hp_changed.emit(hp, max_hp)
+	camera2D = get_node("Camera2D")
+	cameraShakeNoise = FastNoiseLite.new()
 
 func _physics_process(delta: float) -> void:
 
@@ -383,6 +387,9 @@ func take_damage(amount: int) -> void:
 
 	flash_hit()
 
+	var camera_tween = get_tree().create_tween()
+	camera_tween.tween_method(StartCameraShake, 5.0, 1.0, 0.4)
+
 func die() -> void:
 	go_to_death_state()
 
@@ -413,3 +420,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func flash_hit():
 	FlashHit.play("flash_hit")
+
+func StartCameraShake(intensity: float):
+	var cameraOffset = cameraShakeNoise.get_noise_1d(Time.get_ticks_msec()) * intensity
+	camera2D.offset.x = cameraOffset
+	camera2D.offset.y = cameraOffset
