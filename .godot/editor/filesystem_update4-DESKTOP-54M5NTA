@@ -1,0 +1,7 @@
+res://Scenes/Entities/Enemy/trash_walker.tscn
+res://Scenes/Entities/Player/Player.gd
+res://Scenes/Entities/Enemy/trash_walker.gd
+res://Scenes/Levels/game_screen.tscn
+res://Scripts/Components/HitBox.gd
+res://Scripts/Components/HurtBox.gd
+res://Scenes/Entities/Player/player.tscn

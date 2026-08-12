@@ -1,0 +1,62 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1785351862
+::res://Assets/::1782501903
+::res://Assets/Sprites/::1783602728
+::res://Assets/Sprites/Boss/::1782501933
+::res://Assets/Sprites/Components/::1782507422
+::res://Assets/Sprites/Components/HealthBar/::1785291752
+Health_Bar1.png::CompressedTexture2D::6647613933168901174::1785241282::1785241283::1::::<><><>0<>0<>b544bc8e36406ed3b1fd2b14f2808f9d<>res://.godot/imported/Health_Bar1.png-16ecc39d00c746c4df911cb4ac03c310.ctex::
+Health_Bar2.png::CompressedTexture2D::6509046627897844140::1785241282::1785241283::1::::<><><>0<>0<>8bb94cb68dd1e1914a4717eac0f3dfe7<>res://.godot/imported/Health_Bar2.png-afe77a726e7473100a394c85f1324b61.ctex::
+Health_Bar3.png::CompressedTexture2D::8639603227606672091::1785241282::1785241283::1::::<><><>0<>0<>0105196e99bc8520fc31fbeaeb68f743<>res://.godot/imported/Health_Bar3.png-fa33fc8ade6a27b8f5eaf74bca8a2b1e.ctex::
+Health_Bar4.png::CompressedTexture2D::6430390832759223782::1785241282::1785241283::1::::<><><>0<>0<>cd425f9f2868b1c00793286f0546634f<>res://.godot/imported/Health_Bar4.png-dced2977a5f53f50cbc7980c1ed8a57a.ctex::
+Health_Bar5.png::CompressedTexture2D::6993439587499160212::1785241282::1785241283::1::::<><><>0<>0<>1280ab46e667dfa815f23586b14708b5<>res://.godot/imported/Health_Bar5.png-22ec3c28431e8a2a320ee278d8b10523.ctex::
+Health_Bar6.png::CompressedTexture2D::5348579357631367820::1785241282::1785241283::1::::<><><>0<>0<>6245a86ce4986f74f0aa7d3e40f18c02<>res://.godot/imported/Health_Bar6.png-eb8aa1aa8d6221f9f0455be4be74d1bf.ctex::
+health_bar_display.tscn::PackedScene::3088479234391755752::1785291752::0::1::::<><><>0<>0<><>::uid://dw3vrgl8movhb::::res://Scripts/Components/health_bar_display.gd<>uid://c1yfh3f1mb35c::::res://Assets/Sprites/Components/HealthBar/Health_Bar1.png<>uid://cy0bbukohferc::::res://Assets/Sprites/Components/HealthBar/Health_Bar2.png<>uid://dvddadl4f0q6f::::res://Assets/Sprites/Components/HealthBar/Health_Bar3.png<>uid://cxu6uk0coa2mc::::res://Assets/Sprites/Components/HealthBar/Health_Bar4.png<>uid://c6vw6tcakecns::::res://Assets/Sprites/Components/HealthBar/Health_Bar5.png<>uid://cig5k5ugs6x0g::::res://Assets/Sprites/Components/HealthBar/Health_Bar6.png
+::res://Assets/Sprites/Enemy/::1785283714
+cover.png::CompressedTexture2D::3117371312620515103::1785283631::1785283714::1::::<><><>0<>0<>0c27e37651459adc34ea7737b67e216c<>res://.godot/imported/cover.png-1b796f1692039150db15bc57c6e68712.ctex::
+Trash Monster-Sheet.png::CompressedTexture2D::1206069007364675367::1785283631::1785283714::1::::<><><>0<>0<>32e57c2f2a694057a31de3238917be31<>res://.godot/imported/Trash Monster-Sheet.png-6ee31463fb85cbd0481495f18939f197.ctex::
+Trash Monster-Sprite V2.png::CompressedTexture2D::3589682763722410255::1785283631::1785283714::1::::<><><>0<>0<>150b3f5e8bd2d030b2df1283d63453fa<>res://.godot/imported/Trash Monster-Sprite V2.png-4b785b1357bef35fae954a020021fd1c.ctex::
+::res://Assets/Sprites/Environment/::1785114526
+::res://Assets/Sprites/Environment/Background Parallax/::1785166534
+1-Background.png::CompressedTexture2D::3729769361580878654::1785082145::1785082230::1::::<><><>0<>0<>96f0de6f683605911be30fb6ca096bcf<>res://.godot/imported/1-Background.png-252cf4ee7d8c84a620aed3881ef7d8a1.ctex::
+2-super far.png::CompressedTexture2D::7312067635979319572::1785082145::1785082230::1::::<><><>0<>0<>4774a7be055ef3cae29179c45a14c46b<>res://.godot/imported/2-super far.png-d097c1a37b1a1ceb2d5a277064ef2f6b.ctex::
+3-far.png::CompressedTexture2D::7070610541469179798::1785082145::1785082230::1::::<><><>0<>0<>4eb4dad459cb33462718b76c85de8eac<>res://.godot/imported/3-far.png-511f600a94416e119d4713512699e812.ctex::
+4-far light.png::CompressedTexture2D::787736273475535086::1785082145::1785082230::1::::<><><>0<>0<>1e30ada58b83bb649d2ef9a5fc10a86c<>res://.godot/imported/4-far light.png-bfc64046eda2e0fb58bc78a44a20eccd.ctex::
+5-close.png::CompressedTexture2D::682722939293498382::1785082145::1785082230::1::::<><><>0<>0<>d571f2416df3fa18d12e9faa12e8463a<>res://.godot/imported/5-close.png-69de116b421c5d0510d15eafe591a35d.ctex::
+6-close light.png::CompressedTexture2D::5774117729535866988::1785082145::1785082230::1::::<><><>0<>0<>46d3a899aa87386aa99ff6fa72e1188b<>res://.godot/imported/6-close light.png-c03054e08d08add85a6191fef14f7002.ctex::
+7-tileset down.png::CompressedTexture2D::7172561021767370605::1785147183::1785147474::1::::<><><>0<>0<>f8979d40f1c370a6f80cb18434d2ca60<>res://.godot/imported/7-tileset down.png-4a70b692c217c20334643f6253c418dc.ctex::
+7-tileset up.png::CompressedTexture2D::7433120080267551123::1785151294::1785151104::1::::<><><>0<>0<>1890a6a28f2b427ab20e68e0f5a4e863<>res://.godot/imported/7-tileset up.png-dfc47661b82d7a8df24c01c02c242671.ctex::
+7-tileset.png::CompressedTexture2D::6554664060811165405::1785146938::1785147474::1::::<><><>0<>0<>392187d1e1e4c5dc91847f604f3b8d16<>res://.godot/imported/7-tileset.png-ae182176a90b2ca7a797a2bf076ce02e.ctex::
+Ground.png::CompressedTexture2D::8068556680224116918::1785159023::1785159027::1::::<><><>0<>0<>f4fbeae09bfc1002c08ef35f225f6241<>res://.godot/imported/Ground.png-efc723b164edec32f567b0415f59c88c.ctex::
+::res://Assets/Sprites/Environment/Details/::1785114582
+Details - Form.png::CompressedTexture2D::210809069515452700::1783957623::1783957646::1::::<><><>0<>0<>d2d69ac0d8d0eacd92199721d51f0485<>res://.godot/imported/Details - Form.png-c2f7c7f83bfc7c298c1cf18c58ff638c.ctex::
+mira.png::CompressedTexture2D::8883456296233994711::1785113270::1785114582::1::::<><><>0<>0<>33d7809a9fe861bc9b26de2ac44475d7<>res://.godot/imported/mira.png-a07b3a396b8fd42d3d30bbc85e0bfbc9.ctex::
+mira_16px.png::CompressedTexture2D::6101618931644321779::1785113270::1785114582::1::::<><><>0<>0<>d9810c8effa74b6f1851ecc2c58e5cfd<>res://.godot/imported/mira_16px.png-57a293d1dacba101f649a2844faa3cd3.ctex::
+::res://Assets/Sprites/Environment/Particles/::1785166534
+particle.png::CompressedTexture2D::8279155113879147333::1785149550::1785149543::1::::<><><>0<>0<>04b37a6b8e915ff74b51ae192211ecf9<>res://.godot/imported/particle.png-331a51d31df0b48902c5780143b51d83.ctex::
+::res://Assets/Sprites/Environment/VFX/::1785114525
+::res://Assets/Sprites/Player/::1785114554
+Sci-fi Samurai with Sword 124x49 - Copia.png::CompressedTexture2D::5525994060956275057::1782503670::1782503670::1::::<><><>0<>0<>f6aebabea8c0fd810e87807b25324309<>res://.godot/imported/Sci-fi Samurai with Sword 124x49 - Copia.png-563881e57e58ed2a25c42a93d1b339f8.ctex::
+::res://Audio/::1782501952
+::res://Scenes/::1783946253
+::res://Scenes/Entities/::1782502551
+::res://Scenes/Entities/Boss/::1782502078
+::res://Scenes/Entities/Enemy/::1785351648
+health.gd::GDScript::8813595540036532985::1785285385::0::1::::Health<>Node<><>0<>0<><>::
+trash_walker.gd::GDScript::6436975962218945415::1785351648::0::1::::<>CharacterBody2D<><>0<>0<><>::
+trash_walker.tscn::PackedScene::4490064729613647506::1785351560::0::1::::<><><>0<>0<><>::uid://cxyeb3aoei336::::res://Scenes/Entities/Enemy/trash_walker.gd<>uid://bre4sytd3pc6r::::res://Assets/Sprites/Enemy/Trash Monster-Sprite V2.png<>uid://dxtmvpjntpojh::::res://Scenes/Entities/Enemy/health.gd<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd
+::res://Scenes/Entities/Itens/::1782502584
+::res://Scenes/Entities/Itens/Consumables/::1782502586
+::res://Scenes/Entities/Itens/Objects/::1782502554
+::res://Scenes/Entities/Player/::1785351663
+Player.gd::GDScript::283287251703057716::1785351663::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6206054672237870040::1785331756::0::1::::<><><>0<>0<><>::uid://ebhx116fmr0o::::res://Scenes/Entities/Player/Player.gd<>uid://cky3kx66p7lun::::res://Assets/Sprites/Player/Sci-fi Samurai with Sword 124x49 - Copia.png<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd
+::res://Scenes/Environment/::1785012488
+::res://Scenes/Levels/::1785351663
+game_screen.tscn::PackedScene::623299092090953879::1785351663::0::1::::<><><>0<>0<><>::uid://cuoi2wxcqeeua::::res://Scenes/Entities/Player/player.tscn<>uid://cn4q3sk46wcqa::::res://Scenes/Levels/parallax.tscn<>uid://dp7qqfil3h51b::::res://Assets/Sprites/Environment/Particles/particle.png<>uid://bkac2i3kbi6cy::::res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn<>uid://b48aye4m6nwt3::::res://Scenes/Entities/Enemy/trash_walker.tscn
+parallax.tscn::PackedScene::5746185725890225128::1785291751::0::1::::<><><>0<>0<><>::uid://btey0yp4stg11::::res://Assets/Sprites/Environment/Background Parallax/1-Background.png<>uid://dcgaxkvdv04v5::::res://Assets/Sprites/Environment/Background Parallax/2-super far.png<>uid://c70b6mroyo4fi::::res://Assets/Sprites/Environment/Background Parallax/3-far.png<>uid://lht5v7bwddf7::::res://Assets/Sprites/Environment/Background Parallax/4-far light.png<>uid://jyyl2g753qh7::::res://Assets/Sprites/Environment/Background Parallax/5-close.png<>uid://coja407tt7nmq::::res://Assets/Sprites/Environment/Background Parallax/6-close light.png<>uid://dagpbdd3biar2::::res://Assets/Sprites/Environment/Background Parallax/7-tileset down.png<>uid://dd5wnwntxokop::::res://Assets/Sprites/Environment/Background Parallax/7-tileset up.png<>uid://dm7p7j3yfgn5g::::res://Assets/Sprites/Environment/Background Parallax/Ground.png
+::res://Scripts/::1782505475
+::res://Scripts/Components/::1785351560
+health_bar_display.gd::GDScript::8762524937223097555::1785239166::0::1::::HealthBarDisplay<>Sprite2D<><>0<>0<><>::
+HitBox.gd::GDScript::1717682185122081216::1785351560::0::1::::Hitbox<>Area2D<><>0<>0<><>::
+HurtBox.gd::GDScript::3712959875961956226::1785331756::0::1::::Hurtbox<>Area2D<><>0<>0<><>::

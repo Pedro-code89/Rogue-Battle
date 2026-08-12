@@ -1,0 +1,104 @@
+[gd_scene format=4 uid="uid://cn4q3sk46wcqa"]
+
+[ext_resource type="Texture2D" uid="uid://btey0yp4stg11" path="res://Assets/Sprites/Environment/Background Parallax/1-Background.png" id="1_w8imn"]
+[ext_resource type="Texture2D" uid="uid://dcgaxkvdv04v5" path="res://Assets/Sprites/Environment/Background Parallax/2-super far.png" id="2_6n4xe"]
+[ext_resource type="Texture2D" uid="uid://c70b6mroyo4fi" path="res://Assets/Sprites/Environment/Background Parallax/3-far.png" id="3_tllid"]
+[ext_resource type="Texture2D" uid="uid://lht5v7bwddf7" path="res://Assets/Sprites/Environment/Background Parallax/4-far light.png" id="4_oqxa8"]
+[ext_resource type="Texture2D" uid="uid://jyyl2g753qh7" path="res://Assets/Sprites/Environment/Background Parallax/5-close.png" id="5_bks22"]
+[ext_resource type="Texture2D" uid="uid://coja407tt7nmq" path="res://Assets/Sprites/Environment/Background Parallax/6-close light.png" id="6_cywmy"]
+[ext_resource type="Texture2D" uid="uid://dagpbdd3biar2" path="res://Assets/Sprites/Environment/Background Parallax/7-tileset down.png" id="8_oqxa8"]
+[ext_resource type="Texture2D" uid="uid://dd5wnwntxokop" path="res://Assets/Sprites/Environment/Background Parallax/7-tileset up.png" id="8_tllid"]
+[ext_resource type="Texture2D" uid="uid://dm7p7j3yfgn5g" path="res://Assets/Sprites/Environment/Background Parallax/Ground.png" id="9_oqxa8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqxa8"]
+texture = ExtResource("9_oqxa8")
+8:2/size_in_atlas = Vector2i(11, 3)
+8:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bks22"]
+sources/0 = SubResource("TileSetAtlasSource_oqxa8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bks22"]
+texture = ExtResource("8_oqxa8")
+0:3/size_in_atlas = Vector2i(19, 3)
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cywmy"]
+texture = ExtResource("8_tllid")
+0:0/size_in_atlas = Vector2i(19, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_apn5x"]
+sources/0 = SubResource("TileSetAtlasSource_bks22")
+sources/1 = SubResource("TileSetAtlasSource_cywmy")
+
+[node name="Parallax" type="Node2D" unique_id=1640374276]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1823272865]
+repeat_size = Vector2(628, 0)
+repeat_times = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1270699004]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_w8imn")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1555425215]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(628, 0)
+repeat_times = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1461434677]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_6n4xe")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1441006011]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(628, 0)
+repeat_times = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=383500600]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_tllid")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1493163211]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(628, 0)
+autoscroll = Vector2(5, 0)
+repeat_times = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1822365751]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("4_oqxa8")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=371479214]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(628, 0)
+repeat_times = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=1348546321]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_bks22")
+centered = false
+
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=203912400]
+repeat_size = Vector2(628, 0)
+autoscroll = Vector2(15, 0)
+repeat_times = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6" unique_id=13461124]
+scale = Vector2(2, 2)
+texture = ExtResource("6_cywmy")
+centered = false
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1811697788]
+tile_map_data = PackedByteArray("AAAEAA4AAAAIAAIAAAANAA4AAAAIAAIAAAAEABEAAAAIAAIAAAAOABEAAAAIAAIAAAAXAA4AAAAIAAIAAAAYABEAAAAIAAIAAAAhAA4AAAAIAAIAAAAiABEAAAAIAAIAAAArAA4AAAAIAAIAAAAsABEAAAAIAAIAAAAEAP7/AAAIAAIAAAAOAP7/AAAIAAIAAAAYAP7/AAAIAAIAAAAiAP7/AAAIAAIAAAAiAPv/AAAIAAIAAAAYAPv/AAAIAAIAAAAOAPv/AAAIAAIAAAAEAPv/AAAIAAIAAAA1AA4AAAAIAAIAAAA/AA4AAAAIAAIAAAA/ABEAAAAIAAIAAAA2ABEAAAAIAAIAAAAsAP7/AAAIAAIAAAA2AP7/AAAIAAIAAABAAP7/AAAIAAIAAABAAPv/AAAIAAIAAAA2APv/AAAIAAIAAAAsAPv/AAAIAAIAAABKAPv/AAAIAAIAAABKAP7/AAAIAAIAAABJAA4AAAAIAAIAAABJABEAAAAIAAIAAAD6/w4AAAAIAAIAAAD6/xEAAAAIAAIAAADx/w4AAAAIAAIAAADx/xEAAAAIAAIAAADn/w4AAAAIAAIAAADn/xEAAAAIAAIAAAD6//7/AAAIAAIAAADw//7/AAAIAAIAAADm//7/AAAIAAIAAADm//v/AAAIAAIAAADw//v/AAAIAAIAAAD6//v/AAAIAAIAAADd/w4AAAAIAAIAAADd/xEAAAAIAAIAAADd//7/AAAIAAIAAADd//v/AAAIAAIAAADT//7/AAAIAAIAAADT/w4AAAAIAAIAAABTAA4AAAAIAAIAAABdAA4AAAAIAAIAAABnAA4AAAAIAAIAAABxAA4AAAAIAAIAAAB7AA4AAAAIAAIAAACEAA4AAAAIAAIAAACOAA4AAAAIAAIAAACXAA4AAAAIAAIAAAChAA4AAAAIAAIAAAChABEAAAAIAAIAAACXABEAAAAIAAIAAACNABEAAAAIAAIAAACEABEAAAAIAAIAAAB6ABEAAAAIAAIAAABTABEAAAAIAAIAAABcABEAAAAIAAIAAABmABEAAAAIAAIAAABwABEAAAAIAAIAAACqAA4AAAAIAAIAAACqABEAAAAIAAIAAAC0AA4AAAAIAAIAAAC0ABEAAAAIAAIAAAC+AA4AAAAIAAIAAAC+ABEAAAAIAAIAAADIAA4AAAAIAAIA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")
+tile_set = SubResource("TileSet_bks22")
+
+[node name="TilesetUp_Down" type="TileMapLayer" parent="." unique_id=788503104]
+scale = Vector2(1.2, 1.2)
+tile_map_data = PackedByteArray("AAAJAAkAAAAAAAMAAAAcAAkAAAAAAAMAAAAvAAkAAAAAAAMAAAD2/wkAAAAAAAMAAADj/wkAAAAAAAMAAABCAAkAAAAAAAMAAABVAAkAAAAAAAMAAABoAAkAAAAAAAMAAAB7AAkAAAAAAAMAAACOAAkAAAAAAAMAAAChAAkAAAAAAAMAAAC0AAkAAAAAAAMAAADHAAkAAAAAAAMAAADaAAkAAAAAAAMAAACjAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAD4/wAAAQAAAAAAAADl/wAAAQAAAAAAAAAxAAAAAQAAAAAAAABDAAAAAQAAAAAAAABWAAAAAQAAAAAAAABpAAAAAQAAAAAAAAB8AAAAAQAAAAAAAACRAAAAAQAAAAAAAACDAAAAAQAAAAAAAAC2AAAAAQAAAAAAAADJAAAAAQAAAAAAAADcAAAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_apn5x")

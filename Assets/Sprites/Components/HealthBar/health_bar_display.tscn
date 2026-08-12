@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bkac2i3kbi6cy"]
+
+[ext_resource type="Script" uid="uid://dw3vrgl8movhb" path="res://Scripts/Components/health_bar_display.gd" id="1_qlo5l"]
+[ext_resource type="Texture2D" uid="uid://b3wrrkvqrrwxy" path="res://Assets/Sprites/Components/HealthBar/Health_Bar1.png" id="2_c37on"]
+[ext_resource type="Texture2D" uid="uid://3h6oy20esue6" path="res://Assets/Sprites/Components/HealthBar/Health_Bar2.png" id="3_7x0qi"]
+[ext_resource type="Texture2D" uid="uid://c3qvwk02he2tv" path="res://Assets/Sprites/Components/HealthBar/Health_Bar3.png" id="4_w6ocr"]
+[ext_resource type="Texture2D" uid="uid://s7khcttrmq24" path="res://Assets/Sprites/Components/HealthBar/Health_Bar4.png" id="5_huycd"]
+[ext_resource type="Texture2D" uid="uid://bi3s6y3vt4bfw" path="res://Assets/Sprites/Components/HealthBar/Health_Bar5.png" id="6_oiqal"]
+[ext_resource type="Texture2D" uid="uid://otibof7aogl6" path="res://Assets/Sprites/Components/HealthBar/Health_Bar6.png" id="7_ip3ax"]
+[ext_resource type="Texture2D" uid="uid://b14hx0npts18v" path="res://Assets/Sprites/Components/HealthBar/Health_Bar7.png" id="8_ip3ax"]
+[ext_resource type="Texture2D" uid="uid://b4xncndkj4pyu" path="res://Assets/Sprites/Components/HealthBar/Health_Bar8.png" id="9_om1n3"]
+[ext_resource type="Texture2D" uid="uid://68kuy6vfh2qr" path="res://Assets/Sprites/Components/HealthBar/Health_Bar9.png" id="10_fjo3t"]
+[ext_resource type="Texture2D" uid="uid://bjiuoh757tr4k" path="res://Assets/Sprites/Components/HealthBar/Health_Bar10.png" id="11_bki80"]
+[ext_resource type="Texture2D" uid="uid://c5hgffv1sgfhl" path="res://Assets/Sprites/Components/HealthBar/Health_Bar11.png" id="12_6lafp"]
+
+[node name="HealthBar_display" type="Sprite2D" unique_id=1881294647]
+script = ExtResource("1_qlo5l")
+health_textures = Array[Texture2D]([ExtResource("2_c37on"), ExtResource("3_7x0qi"), ExtResource("4_w6ocr"), ExtResource("5_huycd"), ExtResource("6_oiqal"), ExtResource("7_ip3ax"), ExtResource("8_ip3ax"), ExtResource("9_om1n3"), ExtResource("10_fjo3t"), ExtResource("11_bki80"), ExtResource("12_6lafp")])
