@@ -1,0 +1,3 @@
+res://Scenes/Entities/Player/player.tscn
+res://Scenes/Entities/Player/hitflash_player.gdshader
+res://Scenes/Levels/game_screen.tscn

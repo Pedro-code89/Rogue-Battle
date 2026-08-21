@@ -1,7 +1,12 @@
-res://Assets/Sprites/Player/
-res://Scenes/Entities/Player/
-res://Assets/Sprites/Enemy/
+res://Scenes/Entities/Boss/
+res://Assets/Sprites/Boss/Orb Mage/
+res://Assets/Sprites/Player/assassin/
 res://Scenes/Entities/Enemy/
+res://Scenes/Entities/Player/
+res://Scenes/components/
+res://Scripts/Components/
+res://Assets/Sprites/Player/
+res://Assets/Sprites/Enemy/
 res://Assets/Sprites/Components/HealthBar/
 res://Scenes/Environment/
 res://Assets/Sprites/Environment/Details/

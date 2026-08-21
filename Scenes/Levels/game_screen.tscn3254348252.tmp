@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://i46v6umerop0"]
+
+[ext_resource type="PackedScene" uid="uid://cuoi2wxcqeeua" path="res://Scenes/Entities/Player/player.tscn" id="1_jtgf1"]
+[ext_resource type="PackedScene" uid="uid://cn4q3sk46wcqa" path="res://Scenes/Levels/parallax.tscn" id="2_kj4ho"]
+[ext_resource type="Texture2D" uid="uid://dp7qqfil3h51b" path="res://Assets/Sprites/Environment/Particles/particle.png" id="3_b2xqi"]
+[ext_resource type="PackedScene" uid="uid://bkac2i3kbi6cy" path="res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn" id="4_yqivf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b2xqi"]
+
+[sub_resource type="Gradient" id="Gradient_yqivf"]
+offsets = PackedFloat32Array(0.006329114, 0.2278481, 0.7278481, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hjsve"]
+gradient = SubResource("Gradient_yqivf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kj4ho"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(3500, 400, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 49.99998
+gravity = Vector3(0, 20, 0)
+scale_min = 0.39999998
+scale_max = 1.1
+color_ramp = SubResource("GradientTexture1D_hjsve")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2xqi"]
+size = Vector2(4087, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqivf"]
+size = Vector2(20, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsve"]
+size = Vector2(20, 271)
+
+[node name="CaveEntrance" type="Node2D" unique_id=1268095375]
+
+[node name="Parallax" parent="." unique_id=1640374276 instance=ExtResource("2_kj4ho")]
+light_mask = 4
+visibility_layer = 3
+
+[node name="Player" parent="." unique_id=168116629 instance=ExtResource("1_jtgf1")]
+visibility_layer = 6
+z_index = 1
+position = Vector2(45, 160)
+collision_mask = 4
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=470792141]
+material = SubResource("CanvasItemMaterial_b2xqi")
+position = Vector2(514, 159)
+amount = 200
+texture = ExtResource("3_b2xqi")
+visibility_rect = Rect2(-500, -180, 3950, 270)
+process_material = SubResource("ParticleProcessMaterial_kj4ho")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=19604683]
+position = Vector2(0, -15)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1940376401]
+position = Vector2(2043.5, 235)
+shape = SubResource("RectangleShape2D_b2xqi")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1060348928]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1908176746]
+position = Vector2(-10, 135)
+shape = SubResource("RectangleShape2D_yqivf")
+
+[node name="RigthWall" type="StaticBody2D" parent="." unique_id=606990384]
+position = Vector2(2082, 191)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigthWall" unique_id=1107111668]
+position = Vector2(2015, -55.5)
+shape = SubResource("RectangleShape2D_hjsve")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1046952107]
+
+[node name="HealthBar_display" parent="HUD" unique_id=1881294647 node_paths=PackedStringArray("target") instance=ExtResource("4_yqivf")]
+position = Vector2(50, 235)
+target = NodePath("../../Player")

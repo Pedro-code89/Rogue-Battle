@@ -1,4 +1,5 @@
-res://Scenes/Entities/Player/player.tscn
 res://Scenes/Entities/Player/hitflash_player.gdshader
-res://Scenes/Entities/Player/Player.gd
+res://Scenes/Entities/Boss/orb_mage.tscn
+res://Scenes/Entities/Boss/orb_mage.gd
 res://Scenes/Levels/game_screen.tscn
+res://Scripts/Components/HitBox.gd
