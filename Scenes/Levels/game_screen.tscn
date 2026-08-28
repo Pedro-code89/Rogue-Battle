@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn4q3sk46wcqa" path="res://Scenes/Levels/parallax.tscn" id="2_kj4ho"]
 [ext_resource type="Texture2D" uid="uid://dp7qqfil3h51b" path="res://Assets/Sprites/Environment/Particles/particle.png" id="3_b2xqi"]
 [ext_resource type="PackedScene" uid="uid://bkac2i3kbi6cy" path="res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn" id="4_yqivf"]
-[ext_resource type="PackedScene" uid="uid://bd5f814dj24wj" path="res://Scenes/Entities/Boss/orb_mage.tscn" id="5_hjsve"]
+[ext_resource type="PackedScene" uid="uid://du1xfbt8hxyrk" path="res://Scenes/Entities/Enemy/shock_sweper.tscn" id="5_hjsve"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b2xqi"]
 
@@ -90,6 +90,5 @@ shape = SubResource("RectangleShape2D_hjsve")
 position = Vector2(50, 235)
 target = NodePath("../../Player")
 
-[node name="OrbMage" parent="." unique_id=228309536 instance=ExtResource("5_hjsve")]
-position = Vector2(300, 168)
-collision_mask = 4
+[node name="ShockSweper" parent="." unique_id=628592701 instance=ExtResource("5_hjsve")]
+position = Vector2(173, 171)

@@ -507,7 +507,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkvp2"]
-size = Vector2(14, 19)
+size = Vector2(16, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ffj5"]
 size = Vector2(14, 23)
@@ -577,7 +577,7 @@ _data = {
 offsets = PackedFloat32Array(0, 0.9946524)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_i4twt"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oedhw"]
 gradient = SubResource("Gradient_5o8lj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q8fdp"]
@@ -594,7 +594,7 @@ damping_min = 100.00001
 damping_max = 800.00006
 scale_min = 0.79999995
 scale_max = 2.5
-color_ramp = SubResource("GradientTexture1D_i4twt")
+color_ramp = SubResource("GradientTexture1D_oedhw")
 
 [sub_resource type="Animation" id="Animation_qtr04"]
 length = 0.001
@@ -661,7 +661,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("HitBox2/CollisionShape2D:disabled")
+tracks/5/path = NodePath("AttackPivot2/HitBox2/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -817,7 +817,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HitBox2/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AttackPivot2/HitBox2/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1053,11 +1053,11 @@ sprite_frames = SubResource("SpriteFrames_p22ti")
 animation = &"Idle"
 
 [node name="AttackPivot" type="Node2D" parent="." unique_id=1521932081]
-position = Vector2(11, 0)
+position = Vector2(12, 0)
 
 [node name="HitBox" type="Area2D" parent="AttackPivot" unique_id=720936706]
 collision_layer = 8
-collision_mask = 16
+collision_mask = 64
 script = ExtResource("3_22fhq")
 
 [node name="CollisionHitBox" type="CollisionShape2D" parent="AttackPivot/HitBox" unique_id=1489259285]
@@ -1112,9 +1112,16 @@ process_material = SubResource("ParticleProcessMaterial_q8fdp")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1833936682]
 libraries/ = SubResource("AnimationLibrary_s4doi")
 
-[node name="HitBox2" type="Area2D" parent="." unique_id=1159777130]
+[node name="AttackPivot2" type="Node2D" parent="." unique_id=235823117]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox2" unique_id=1604874693]
+[node name="HitBox2" type="Area2D" parent="AttackPivot2" unique_id=1159777130]
+light_mask = 8
+visibility_layer = 64
+collision_layer = 128
+collision_mask = 64
+script = ExtResource("3_22fhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot2/HitBox2" unique_id=1604874693]
 shape = SubResource("RectangleShape2D_qtr04")
 disabled = true
 

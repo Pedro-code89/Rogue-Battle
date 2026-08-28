@@ -1,5 +1,4 @@
+res://Scenes/Entities/Enemy/shock_sweper.tscn
 res://Scenes/Entities/Player/hitflash_player.gdshader
-res://Scenes/Entities/Boss/orb_mage.tscn
-res://Scenes/Entities/Boss/orb_mage.gd
+res://Scenes/Entities/Enemy/shock_sweper.gd
 res://Scenes/Levels/game_screen.tscn
-res://Scripts/Components/HitBox.gd

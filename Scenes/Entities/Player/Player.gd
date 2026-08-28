@@ -28,7 +28,7 @@ const DEATH_FADE_DURATION: float = 2.0
 
 const DASH_SPEED: float = 300.0
 const DASH_DURATION: float = 0.3
-const DASH_COOLDOWN: float = 1
+const DASH_COOLDOWN: float = 0.8
 
 # Cooldown do golpe especial (Attack3)
 const ATTACK3_COOLDOWN: float = 1.2
@@ -177,7 +177,7 @@ func go_to_attack3_state():
 	status = PlayerState.ATTACK3
 	AnimationCharacter.play("Attack_Slash")
 	AnimationControl.play("attack3_slash_assasin")
-	$AttackPivot/HitBox.damage = 25.0
+	$AttackPivot2/HitBox2.damage = 25.0
 
 	# Impulso da deslizada, na direção que o personagem já está olhando
 	var slide_direction := -1.0 if AnimationCharacter.flip_h else 1.0

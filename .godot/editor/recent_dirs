@@ -1,7 +1,8 @@
-res://Scenes/Entities/Boss/
-res://Assets/Sprites/Boss/Orb Mage/
-res://Assets/Sprites/Player/assassin/
+res://Assets/Sprites/Enemy/Shock Sweeper/
 res://Scenes/Entities/Enemy/
+res://Assets/Sprites/Boss/Orb Mage/
+res://Scenes/Entities/Boss/
+res://Assets/Sprites/Player/assassin/
 res://Scenes/Entities/Player/
 res://Scenes/components/
 res://Scripts/Components/
