@@ -1,9 +1,9 @@
 CollisionShape2D
 Area2D
+AnimationPlayer
 ProgressBar
 Node2D
 Node
-AnimationPlayer
 Timer
 AnimatedSprite2D
 Sprite2D

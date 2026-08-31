@@ -20,8 +20,8 @@ enum PlayerState {
 @onready var FlashHit: AnimationPlayer = $FlashHitPlayer
 @onready var hit_particles: GPUParticles2D = $Hit_particles
 
-const SPEED: float = 90.0
-const SPEED_RUN: float = 120.0
+const SPEED: float = 100.0
+const SPEED_RUN: float = 130.0
 const JUMP_VELOCITY: float = -250.0
 
 const DEATH_FADE_DURATION: float = 2.0
@@ -31,7 +31,7 @@ const DASH_DURATION: float = 0.3
 const DASH_COOLDOWN: float = 0.8
 
 # Cooldown do golpe especial (Attack3)
-const ATTACK3_COOLDOWN: float = 1.2
+const ATTACK3_COOLDOWN: float = 3.0
 
 # Deslizada do golpe especial (Attack3)
 const ATTACK3_SLIDE_SPEED: float = 200.0
@@ -40,7 +40,13 @@ const ATTACK3_SLIDE_FRICTION: float = 900.0
 # Tempo sem poder dashar depois de usar o Attack3 (pra não ficar roubado)
 const ATTACK3_DASH_LOCK: float = 2.0
 
+# Trava bem curta do dash durante o hit-stun
+const HIT_STUN_DASH_LOCK: float = 0.2
+
 const DAMAGE_LABEL = preload("uid://by3nwql4oot7k")
+
+@export var hit_slow_multiplier := 0.20  # quase travado enquanto atordoado
+@export var hit_slow_duration := 0.4    # por quanto tempo fica lento
 
 var status: PlayerState
 var buffered_attack := false
@@ -57,6 +63,8 @@ var dash_direction: float = 1.0
 var camera2D: Camera2D
 var cameraShakeNoise: FastNoiseLite
 
+var hit_slow_timer: float = 0.0
+
 # Controle de cooldown do Attack3
 var can_attack3: bool = true
 var attack3_cooldown_timer: float = 1.0
@@ -72,9 +80,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 
-	if Input.is_action_just_pressed("ui_cancel"):
-		take_damage(10)
-
 	if dash_cooldown_timer > 0:
 		dash_cooldown_timer -= delta
 		if dash_cooldown_timer <= 0:
@@ -84,6 +89,9 @@ func _physics_process(delta: float) -> void:
 		attack3_cooldown_timer -= delta
 		if attack3_cooldown_timer <= 0:
 			can_attack3 = true
+
+	if hit_slow_timer > 0:
+		hit_slow_timer -= delta
 
 	if not is_on_floor() and not is_dashing:
 		velocity += get_gravity() * delta
@@ -161,7 +169,7 @@ func go_to_attack1_state():
 	face_mouse()
 	AnimationControl.play("attack1_assasin")
 	AnimationCharacter.play("Attack_1")
-	$AttackPivot/HitBox.damage = 10.0
+	$AttackPivot/HitBox.damage = get_attack_damage()
 	velocity.x = 0
 
 
@@ -170,14 +178,14 @@ func go_to_attack2_state():
 	face_mouse()
 	AnimationCharacter.play("Attack_2")
 	AnimationControl.play("attack2_assasin")
-	$AttackPivot/HitBox.damage = 10.0
+	$AttackPivot/HitBox.damage = get_attack_damage()
 	velocity.x = 0
 
 func go_to_attack3_state():
 	status = PlayerState.ATTACK3
 	AnimationCharacter.play("Attack_Slash")
 	AnimationControl.play("attack3_slash_assasin")
-	$AttackPivot2/HitBox2.damage = 25.0
+	$AttackPivot2/HitBox2.damage = 15.0
 
 	# Impulso da deslizada, na direção que o personagem já está olhando
 	var slide_direction := -1.0 if AnimationCharacter.flip_h else 1.0
@@ -216,10 +224,10 @@ func go_to_dash_state():
 	# Vira o personagem e o AttackPivot pra direção do dash
 	if dash_direction < 0:
 		AnimationCharacter.flip_h = true
-		$AttackPivot.position.x = -13
+		$AttackPivot.position.x = -12
 	else:
 		AnimationCharacter.flip_h = false
-		$AttackPivot.position.x = 13
+		$AttackPivot.position.x = 12
 
 	velocity.x = dash_direction * DASH_SPEED
 	velocity.y = 0
@@ -401,6 +409,8 @@ func dash_state(delta: float):
 
 		return
 
+func get_attack_damage() -> int:
+	return randi_range(5, 8)
 
 # FUNÇÃO DE MOVIMENTO / FUNÇÃO BÁSICA
 
@@ -412,6 +422,9 @@ func move():
 	if Input.is_action_pressed("run"):
 		current_speed = SPEED_RUN
 
+	if hit_slow_timer > 0:
+		current_speed *= hit_slow_multiplier
+
 	if direction:
 		velocity.x = direction * current_speed
 	else:
@@ -419,20 +432,20 @@ func move():
 
 	if direction < 0:
 		AnimationCharacter.flip_h = true
-		$AttackPivot.position.x = -13
+		$AttackPivot.position.x = -10
 	elif direction > 0:
 		AnimationCharacter.flip_h = false
-		$AttackPivot.position.x = 13
+		$AttackPivot.position.x = 10
 
 func face_mouse() -> void:
 	var mouse_pos := get_global_mouse_position()
 
 	if mouse_pos.x < global_position.x:
 		AnimationCharacter.flip_h = true
-		$AttackPivot.position.x = -13
+		$AttackPivot.position.x = -10
 	else:
 		AnimationCharacter.flip_h = false
-		$AttackPivot.position.x = 13
+		$AttackPivot.position.x = 10
 
 func take_damage(amount: int) -> void:
 	if status == PlayerState.DEATH:
@@ -451,6 +464,15 @@ func take_damage(amount: int) -> void:
 
 	if hp <= 0:
 		die()
+
+	hit_slow_timer = hit_slow_duration
+	velocity.x = 0  # corta o impulso atual pra sentir o travamento na hora do hit
+
+	hit_slow_timer = hit_slow_duration
+	velocity.x = 0  # corta o impulso atual pra sentir o travamento na hora do hit
+
+	can_dash = false
+	dash_cooldown_timer = max(dash_cooldown_timer, HIT_STUN_DASH_LOCK)
 
 	flash_hit()
 
@@ -509,7 +531,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 				go_to_attack1_state()
 			else:
 				go_to_idle_state()
-
 		"Land":
 			go_to_idle_state()
 

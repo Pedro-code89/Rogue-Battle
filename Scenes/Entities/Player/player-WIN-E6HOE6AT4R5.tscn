@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cuoi2wxcqeeua"]
+[gd_scene format=3 uid="uid://chtddd70gx7n5"]
 
 [ext_resource type="Script" uid="uid://ebhx116fmr0o" path="res://Scenes/Entities/Player/Player.gd" id="1_4ffj5"]
 [ext_resource type="Shader" uid="uid://dpbo0oav58vtw" path="res://Scenes/Entities/Player/hitflash_player.gdshader" id="2_75l7y"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cfdpim38li7ig" path="res://Assets/Sprites/Player/assassin/Sweep Attack with VFX.png" id="5_oedhw"]
 [ext_resource type="Texture2D" uid="uid://bjohr1s6o14ka" path="res://Assets/Sprites/Player/assassin/Cross Slice with VFX.png" id="5_qtr04"]
 [ext_resource type="Texture2D" uid="uid://bwpbpofrig5ip" path="res://Assets/Sprites/Player/assassin/fall.png" id="6_qtr04"]
+[ext_resource type="AudioStream" uid="uid://c286es6dvj2vg" path="res://Audio/Player/impactMining_000.ogg" id="6_y6hyn"]
+[ext_resource type="AudioStream" uid="uid://cb5e31r60npda" path="res://Audio/Player/impactMining_004.ogg" id="7_75l7y"]
 [ext_resource type="Texture2D" uid="uid://c4ecnvkm72gd" path="res://Assets/Sprites/Player/assassin/idle.png" id="7_oedhw"]
 [ext_resource type="AudioStream" uid="uid://ds6dvqu4lahua" path="res://Audio/Player/laserRetro_001.ogg" id="8_5o8lj"]
 [ext_resource type="Texture2D" uid="uid://dl7u8ypunt3mk" path="res://Assets/Sprites/Player/assassin/jump.png" id="8_s4doi"]
@@ -283,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l6pm8")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_1",
 "speed": 10.0
 }, {
@@ -303,7 +305,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5nyj")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_2",
 "speed": 10.0
 }, {
@@ -338,9 +340,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q573n")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Slash",
-"speed": 10.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -358,7 +360,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sajyx")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Dash",
 "speed": 10.0
 }, {
@@ -387,7 +389,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m4hte")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -404,7 +406,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjft7")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Fall",
 "speed": 10.0
 }, {
@@ -436,7 +438,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wsfpj")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Idle",
 "speed": 11.0
 }, {
@@ -453,7 +455,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ph3bi")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Jump",
 "speed": 10.0
 }, {
@@ -470,7 +472,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pi8fy")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Land",
 "speed": 11.0
 }, {
@@ -499,7 +501,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p65dx")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Run",
 "speed": 10.0
 }]
@@ -732,18 +734,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AttackPivot/HitBox/CollisionHitBox:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2.5, 0), Vector2(-2.5, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_l6pm8"]
 resource_name = "attack2_assasin"
@@ -807,18 +797,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AttackPivot/HitBox/CollisionHitBox:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_eax62"]
@@ -1072,10 +1050,10 @@ shape = SubResource("RectangleShape2D_ty7gg")
 texture_filter = 1
 material = SubResource("ShaderMaterial_i4twt")
 sprite_frames = SubResource("SpriteFrames_p22ti")
-animation = &"Attack_2"
+animation = &"Idle"
 
 [node name="AttackPivot" type="Node2D" parent="." unique_id=1521932081]
-position = Vector2(10, 0)
+position = Vector2(12, 0)
 
 [node name="HitBox" type="Area2D" parent="AttackPivot" unique_id=720936706]
 collision_layer = 8
@@ -1104,19 +1082,20 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="FlashHitPlayer" type="AnimationPlayer" parent="." unique_id=1842896939]
-callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_q8fdp")
 
 [node name="Hit_sfx" type="AudioStreamPlayer2D" parent="." unique_id=1070577472]
+stream = ExtResource("6_y6hyn")
 volume_db = 10.0
 
 [node name="Hit_sfx2" type="AudioStreamPlayer2D" parent="." unique_id=955492615]
+stream = ExtResource("7_75l7y")
 volume_db = 10.0
 pitch_scale = 0.9
 
 [node name="Hit_damage" type="AudioStreamPlayer2D" parent="." unique_id=366655487]
 stream = ExtResource("8_5o8lj")
-volume_db = 0.904
+volume_db = 1.0
 pitch_scale = 0.8
 
 [node name="Hit_particles" type="GPUParticles2D" parent="." unique_id=2120939428]

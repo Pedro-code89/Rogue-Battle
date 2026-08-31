@@ -91,4 +91,6 @@ position = Vector2(50, 235)
 target = NodePath("../../Player")
 
 [node name="ShockSweper" parent="." unique_id=628592701 instance=ExtResource("5_hjsve")]
-position = Vector2(173, 171)
+position = Vector2(277, 171)
+hp = 120
+max_hp = 120

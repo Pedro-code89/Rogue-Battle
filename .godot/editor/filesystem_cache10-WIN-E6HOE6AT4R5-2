@@ -1,9 +1,9 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1788182470
-::res://Assets/::1786625279
-::res://Assets/Sprites/::1786625282
-::res://Assets/Sprites/Boss/::1788181536
-::res://Assets/Sprites/Boss/Orb Mage/::1788181536
+::res://::1788170397
+::res://Assets/::1785146044
+::res://Assets/Sprites/::1785146044
+::res://Assets/Sprites/Boss/::1787224112
+::res://Assets/Sprites/Boss/Orb Mage/::1787224137
 attack .png::CompressedTexture2D::1333900289482095151::1787224093::1787224137::1::::<><><>0<>0<>c5d5f3d6af2207d9949e60a3c6aa70b2<>res://.godot/imported/attack .png-f55ec7ec5e399c73f82ec41824548c92.ctex::
 attack vfx .png::CompressedTexture2D::7388396343841947130::1787224093::1787224137::1::::<><><>0<>0<>99ac71633e8eaf680b135047ea86e6ec<>res://.godot/imported/attack vfx .png-a176d1f5a2548bf4bf2b899674c78516.ctex::
 death.png::CompressedTexture2D::7917840837845234440::1787224093::1787224137::1::::<><><>0<>0<>9376341428654e2fe98295112504e93d<>res://.godot/imported/death.png-7ed3af2cc43363faf804197f665b2838.ctex::
@@ -13,8 +13,8 @@ idle.png::CompressedTexture2D::5195003784952430107::1787224093::1787224137::1:::
 move.png::CompressedTexture2D::5462536424931254736::1787224093::1787224137::1::::<><><>0<>0<>7f3f0d93d339434d155707c152cf4e5b<>res://.godot/imported/move.png-f69e52de384b42f7703c8b89002c3867.ctex::
 Sweep Attack with VFX.png::CompressedTexture2D::1218099044205863298::1787224093::1787224137::1::::<><><>0<>0<>b2066e015ff8d0828b7cfc3afded48b7<>res://.godot/imported/Sweep Attack with VFX.png-8ef670f4b193d03a63395618800d0ad6.ctex::
 VFX for Sweep.png::CompressedTexture2D::8251035929679374375::1787224094::1787224137::1::::<><><>0<>0<>8edee5542804c4e64b147086cb49ee82<>res://.godot/imported/VFX for Sweep.png-fb8edf9ef375eadd3e8015ae44638a8f.ctex::
-::res://Assets/Sprites/Components/::1786625282
-::res://Assets/Sprites/Components/HealthBar/::1786625282
+::res://Assets/Sprites/Components/::1785146044
+::res://Assets/Sprites/Components/HealthBar/::1785752437
 Health_Bar1.png::CompressedTexture2D::4398187721945509078::1785752327::1785752329::1::::<><><>0<>0<>2742482a59738dd1f363eefee5ad2ba0<>res://.godot/imported/Health_Bar1.png-16ecc39d00c746c4df911cb4ac03c310.ctex::
 Health_Bar2.png::CompressedTexture2D::1981646797445838503::1785752327::1785752330::1::::<><><>0<>0<>700eb655884fe5ca233cf03294afc4b2<>res://.godot/imported/Health_Bar2.png-afe77a726e7473100a394c85f1324b61.ctex::
 Health_Bar3.png::CompressedTexture2D::6772473942719980471::1785752327::1785752330::1::::<><><>0<>0<>afe666fe12e3452d4543abb7615b61c3<>res://.godot/imported/Health_Bar3.png-fa33fc8ade6a27b8f5eaf74bca8a2b1e.ctex::
@@ -27,27 +27,27 @@ Health_Bar9.png::CompressedTexture2D::2244622813879211909::1785752327::178575233
 Health_Bar10.png::CompressedTexture2D::3035875057941653760::1785752327::1785752330::1::::<><><>0<>0<>372c59eaf1c810ad9d4e6d09191fcc3d<>res://.godot/imported/Health_Bar10.png-d2f849ba5c9789e8803cca507039bf9e.ctex::
 Health_Bar11.png::CompressedTexture2D::6893330847994975709::1785752327::1785752330::1::::<><><>0<>0<>a62b6a97308fc20cc6592be2687ee426<>res://.godot/imported/Health_Bar11.png-4608f2c29028cda07b454d82216f5555.ctex::
 health_bar_display.tscn::PackedScene::3088479234391755752::1786667451::0::1::::<><><>0<>0<><>::uid://dw3vrgl8movhb::::res://Scripts/Components/health_bar_display.gd<>uid://b3wrrkvqrrwxy::::res://Assets/Sprites/Components/HealthBar/Health_Bar1.png<>uid://3h6oy20esue6::::res://Assets/Sprites/Components/HealthBar/Health_Bar2.png<>uid://c3qvwk02he2tv::::res://Assets/Sprites/Components/HealthBar/Health_Bar3.png<>uid://s7khcttrmq24::::res://Assets/Sprites/Components/HealthBar/Health_Bar4.png<>uid://bi3s6y3vt4bfw::::res://Assets/Sprites/Components/HealthBar/Health_Bar5.png<>uid://otibof7aogl6::::res://Assets/Sprites/Components/HealthBar/Health_Bar6.png<>uid://b14hx0npts18v::::res://Assets/Sprites/Components/HealthBar/Health_Bar7.png<>uid://b4xncndkj4pyu::::res://Assets/Sprites/Components/HealthBar/Health_Bar8.png<>uid://68kuy6vfh2qr::::res://Assets/Sprites/Components/HealthBar/Health_Bar9.png<>uid://bjiuoh757tr4k::::res://Assets/Sprites/Components/HealthBar/Health_Bar10.png<>uid://c5hgffv1sgfhl::::res://Assets/Sprites/Components/HealthBar/Health_Bar11.png
-::res://Assets/Sprites/Enemy/::1788181551
-::res://Assets/Sprites/Enemy/Shock Sweeper/::1788181551
+::res://Assets/Sprites/Enemy/::1787824903
+::res://Assets/Sprites/Enemy/Shock Sweeper/::1787920002
 death.png::CompressedTexture2D::3918638696548781741::1787825647::1787825651::1::::<><><>0<>0<>a893d5f14303ee260a4ce3481be60ffd<>res://.godot/imported/death.png-7388880651a53da199d12e9f533b50bd.ctex::
 fall.png::CompressedTexture2D::991993363721578969::1787832091::1787832094::1::::<><><>0<>0<>376d992eccc8256e73712032227f3bbc<>res://.godot/imported/fall.png-0a15ce2de4ce0203c1d897aab8f2842f.ctex::
 hit.png::CompressedTexture2D::8893249613669030868::1787224094::1787824943::1::::<><><>0<>0<>3f667521b7fc21417e3a664b90fab316<>res://.godot/imported/hit.png-b906b80ab2ca3043ccf0584df5317dc3.ctex::
 jump.png::CompressedTexture2D::4588177988917770432::1787831941::1787831941::1::::<><><>0<>0<>910f51436acb6d84306593115cdf72e7<>res://.godot/imported/jump.png-12cb23ebf8ec303ecdb901280e7a86ce.ctex::
 Shock Sweeper All (88x30).png::CompressedTexture2D::2445005227014391023::1787224094::1787824943::1::::<><><>0<>0<>ec9fb69870101ea3f1e5891c50bf84ff<>res://.godot/imported/Shock Sweeper All (88x30).png-85ff2641041d6f8cb8206fe3a4dfc3d5.ctex::
 shuffe(move).png::CompressedTexture2D::7401976600015411074::1787825862::1787825862::1::::<><><>0<>0<>86aea1399b1391dec8cdd367c05f1e4b<>res://.godot/imported/shuffe(move).png-4d81211fd93ca48b2e4293a81973d342.ctex::
-slam with VFX.png::CompressedTexture2D::5301948882476490027::1788132702::1788132704::1::::<><><>0<>0<>be9083ecd8a61db6c8282955191d1868<>res://.godot/imported/slam with VFX.png-d9b6918779a5208edf03623a311a15c0.ctex::
+slam with VFX.png::CompressedTexture2D::5301948882476490027::1787920000::1787920002::1::::<><><>0<>0<>be9083ecd8a61db6c8282955191d1868<>res://.godot/imported/slam with VFX.png-d9b6918779a5208edf03623a311a15c0.ctex::
 Slam without VFX.png::CompressedTexture2D::3866151902987961339::1787224094::1787824943::1::::<><><>0<>0<>b04d3ed9680b0d6fcb8822d5ffccb2e4<>res://.godot/imported/Slam without VFX.png-3dcdd1541209947d2d15685e50e5619c.ctex::
-Spin Slam with VFX.png::CompressedTexture2D::4764377413232348956::1788137767::1788137768::1::::<><><>0<>0<>e29198f68c07e161bc538e6fb93c0c5d<>res://.godot/imported/Spin Slam with VFX.png-50384c894babcef96c7515e62c464836.ctex::
+Spin Slam with VFX.png::CompressedTexture2D::4764377413232348956::1787224094::1787824943::1::::<><><>0<>0<>e29198f68c07e161bc538e6fb93c0c5d<>res://.godot/imported/Spin Slam with VFX.png-50384c894babcef96c7515e62c464836.ctex::
 Spin Slam without VFX.png::CompressedTexture2D::2676599221064736345::1787224094::1787824943::1::::<><><>0<>0<>bf77ba5b052ebd4bffd2953a9ad1c65b<>res://.godot/imported/Spin Slam without VFX.png-0c728d48623f552a25bdc173b52fd388.ctex::
 static idle.png::CompressedTexture2D::2835536611482490955::1787224094::1787824943::1::::<><><>0<>0<>45f188d9b1709057a3403ff0524f7be8<>res://.godot/imported/static idle.png-0dfc871b07b568b8da21fe9d1bce9f51.ctex::
-Sweep with VFX.png::CompressedTexture2D::1264282186782024228::1788132664::1788132666::1::::<><><>0<>0<>98a806288c8fbbba810bb5c6094691f5<>res://.godot/imported/Sweep with VFX.png-eaee075fba016f38d881dd28272c4ca5.ctex::
+Sweep with VFX.png::CompressedTexture2D::1264282186782024228::1787224094::1787824943::1::::<><><>0<>0<>98a806288c8fbbba810bb5c6094691f5<>res://.godot/imported/Sweep with VFX.png-eaee075fba016f38d881dd28272c4ca5.ctex::
 Sweep without VFX.png::CompressedTexture2D::47140849602116699::1787224094::1787824943::1::::<><><>0<>0<>a4773b1f746d75ccfc603b799495f53b<>res://.godot/imported/Sweep without VFX.png-51d188abf559dd267151d392d0ef2a08.ctex::
 VFX for Slam.png::CompressedTexture2D::4002087019436745196::1787224094::1787824943::1::::<><><>0<>0<>07bf7348aa44ef4df5bd1e13e0569e65<>res://.godot/imported/VFX for Slam.png-b8dfd210966b25c8624724eb5db6add6.ctex::
 VFX for Spin Slam.png::CompressedTexture2D::6188913475429027930::1787224094::1787824943::1::::<><><>0<>0<>b87d22d987c7fce640416d39f2266226<>res://.godot/imported/VFX for Spin Slam.png-9745e22e83f153bf71423e934c8d96ac.ctex::
 VFX for Sweep.png::CompressedTexture2D::4157674963379514453::1787224094::1787824943::1::::<><><>0<>0<>254b2578d1ce5a41c492b4e7b31bebf2<>res://.godot/imported/VFX for Sweep.png-b7ab7282e2429b54e673f5468f94772d.ctex::
-wake.png::CompressedTexture2D::6176321209175060100::1788135879::1788135881::1::::<><><>0<>0<>03d42339c9292452e71205b30949fc83<>res://.godot/imported/wake.png-3001ffea13235936e006a1cee4fb1616.ctex::
-::res://Assets/Sprites/Environment/::1786625282
-::res://Assets/Sprites/Environment/Background Parallax/::1786625282
+wake.png::CompressedTexture2D::6176321209175060100::1787825992::1787825999::1::::<><><>0<>0<>03d42339c9292452e71205b30949fc83<>res://.godot/imported/wake.png-3001ffea13235936e006a1cee4fb1616.ctex::
+::res://Assets/Sprites/Environment/::1785146067
+::res://Assets/Sprites/Environment/Background Parallax/::1785159027
 1-Background.png::CompressedTexture2D::3729769361580878654::1785082145::1785082230::1::::<><><>0<>0<>96f0de6f683605911be30fb6ca096bcf<>res://.godot/imported/1-Background.png-252cf4ee7d8c84a620aed3881ef7d8a1.ctex::
 2-super far.png::CompressedTexture2D::7312067635979319572::1785082145::1785082230::1::::<><><>0<>0<>4774a7be055ef3cae29179c45a14c46b<>res://.godot/imported/2-super far.png-d097c1a37b1a1ceb2d5a277064ef2f6b.ctex::
 3-far.png::CompressedTexture2D::7070610541469179798::1785082145::1785082230::1::::<><><>0<>0<>4eb4dad459cb33462718b76c85de8eac<>res://.godot/imported/3-far.png-511f600a94416e119d4713512699e812.ctex::
@@ -58,14 +58,14 @@ wake.png::CompressedTexture2D::6176321209175060100::1788135879::1788135881::1:::
 7-tileset up.png::CompressedTexture2D::7433120080267551123::1785151294::1785151104::1::::<><><>0<>0<>1890a6a28f2b427ab20e68e0f5a4e863<>res://.godot/imported/7-tileset up.png-dfc47661b82d7a8df24c01c02c242671.ctex::
 7-tileset.png::CompressedTexture2D::6554664060811165405::1785146938::1785147474::1::::<><><>0<>0<>392187d1e1e4c5dc91847f604f3b8d16<>res://.godot/imported/7-tileset.png-ae182176a90b2ca7a797a2bf076ce02e.ctex::
 Ground.png::CompressedTexture2D::8068556680224116918::1785159023::1785159027::1::::<><><>0<>0<>f4fbeae09bfc1002c08ef35f225f6241<>res://.godot/imported/Ground.png-efc723b164edec32f567b0415f59c88c.ctex::
-::res://Assets/Sprites/Environment/Details/::1786625282
+::res://Assets/Sprites/Environment/Details/::1786546859
 mira.png::CompressedTexture2D::8883456296233994711::1785113270::1785114582::1::::<><><>0<>0<>33d7809a9fe861bc9b26de2ac44475d7<>res://.godot/imported/mira.png-a07b3a396b8fd42d3d30bbc85e0bfbc9.ctex::
 mira_16px.png::CompressedTexture2D::6101618931644321779::1785113270::1785114582::1::::<><><>0<>0<>d9810c8effa74b6f1851ecc2c58e5cfd<>res://.godot/imported/mira_16px.png-57a293d1dacba101f649a2844faa3cd3.ctex::
-::res://Assets/Sprites/Environment/Particles/::1786625282
+::res://Assets/Sprites/Environment/Particles/::1785149543
 particle.png::CompressedTexture2D::8279155113879147333::1785149550::1785149543::1::::<><><>0<>0<>04b37a6b8e915ff74b51ae192211ecf9<>res://.godot/imported/particle.png-331a51d31df0b48902c5780143b51d83.ctex::
-::res://Assets/Sprites/Environment/VFX/::1786625282
-::res://Assets/Sprites/Player/::1788181535
-::res://Assets/Sprites/Player/assassin/::1788181535
+::res://Assets/Sprites/Environment/VFX/::1785146067
+::res://Assets/Sprites/Player/::1787224128
+::res://Assets/Sprites/Player/assassin/::1787306367
 attack 1 with VFX.png::CompressedTexture2D::3239895087070308656::1787159543::1787159554::1::::<><><>0<>0<>34e2432728a973a04e98d4d2964e7314<>res://.godot/imported/attack 1 with VFX.png-1ab45103ef51fc0bf93584062d0ca38e.ctex::
 attack 1 without VFX.png::CompressedTexture2D::7175438069031393167::1786877019::1786877047::1::::<><><>0<>0<>1781f572cd1deb793999c9a8a9dd214a<>res://.godot/imported/attack 1 without VFX.png-513b0a2df2ef97b38e02222456808626.ctex::
 attack 2 with VFX.png::CompressedTexture2D::4737381239977839246::1787159505::1787159510::1::::<><><>0<>0<>c3b55ee88ffee3f56fbbb9156dfcb9bb<>res://.godot/imported/attack 2 with VFX.png-f45d314f72468fb3a3fe3deff737a8d7.ctex::
@@ -89,46 +89,43 @@ VFX for Cross Slice.png::CompressedTexture2D::4101038605433733186::1786877019::1
 VFX for land.png::CompressedTexture2D::3080218963118563957::1786877019::1786877047::1::::<><><>0<>0<>e259903708356ee63e5a98ed7c517fdf<>res://.godot/imported/VFX for land.png-f118d28224ea14fed4d3311833055641.ctex::
 VFX for run.png::CompressedTexture2D::4257337510807520481::1786877019::1786877047::1::::<><><>0<>0<>90ff3084bd0df0b63c74e603566814d4<>res://.godot/imported/VFX for run.png-e3a1526ff44b230e29969197901b7010.ctex::
 VFX for Sweep Attack.png::CompressedTexture2D::2502116006791768827::1786877019::1786877047::1::::<><><>0<>0<>332ab7acba9b1161ddfc76dbea6b91fc<>res://.godot/imported/VFX for Sweep Attack.png-f7426252965d1e129703d591b1c186ea.ctex::
-::res://Audio/::1786625293
-::res://Audio/Enemy/::1786625293
-::res://Audio/Environment/::1786625293
-::res://Audio/Player/::1788181522
+::res://Audio/::1785421117
+::res://Audio/Enemy/::1785421105
+::res://Audio/Environment/::1785421115
+::res://Audio/Player/::1786701765
 impactMining_000.ogg::AudioStreamOggVorbis::6737954974922423540::1785420775::1785421127::1::::<><><>0<>0<>565c3c4d88a5a13419b0fe9a51b62d24<>res://.godot/imported/impactMining_000.ogg-cae81940991fc77f853364175b7b84ca.oggvorbisstr::
 impactMining_004.ogg::AudioStreamOggVorbis::4905255807157644474::1785420775::1785422318::1::::<><><>0<>0<>9a9b4c99d3c143e3ea43835cdb5a8295<>res://.godot/imported/impactMining_004.ogg-7c0a4b30263b4f10a92256d32a083e4a.oggvorbisstr::
 laserRetro_001.ogg::AudioStreamOggVorbis::8486877472192067732::1785017873::1786665207::1::::<><><>0<>0<>387880536413b42046d010d7d3656653<>res://.godot/imported/laserRetro_001.ogg-d0f1ea15ab3a8f9dd7229c3d362debbc.oggvorbisstr::
-::res://Fonts/::1788181521
+::res://Fonts/::1786701764
 monogram-extended.ttf::FontFile::6812631657296355909::1786660841::1786661188::1::::<><><>0<>0<>02abcdb1a4e05874ecd5c833fe74602a<>res://.godot/imported/monogram-extended.ttf-8d8ec509f60892c81310ac0c9cb0ad8f.fontdata::
-::res://Scenes/::1786625298
-::res://Scenes/components/::1786625298
+::res://Scenes/::1786622778
+::res://Scenes/components/::1787050413
 damage_label.tscn::PackedScene::4129584975194783942::1786749279::0::1::::<><><>0<>0<><>::uid://daa011yf55o4::::res://Scripts/Components/damage_label.gd<>uid://c4cdbvs4jkjqb::::res://Fonts/monogram-extended.ttf
-::res://Scenes/Entities/::1786625282
-::res://Scenes/Entities/Boss/::1786625282
+::res://Scenes/Entities/::1785146044
+::res://Scenes/Entities/Boss/::1787824965
 orb_mage.tscn::PackedScene::166491012295714531::1787824965::0::1::::<><><>0<>0<><>::
-::res://Scenes/Entities/Enemy/::1786625282
-shock_sweper.gd::GDScript::6675213508777231846::1788181453::0::1::::<>CharacterBody2D<><>0<>0<><>::
-shock_sweper.gdshader::Shader::5738233654651946214::1788177836::0::1::::<><><>0<>0<><>::
-shock_sweper.tscn::PackedScene::8618118248632947892::1788179846::0::1::::<><><>0<>0<><>::uid://c2dr15wpl0dhu::::res://Scenes/Entities/Enemy/shock_sweper.gd<>uid://ct84dw1urhhqa::::res://Assets/Sprites/Enemy/Shock Sweeper/wake.png<>uid://bv3hn3jlmimgr::::res://Assets/Sprites/Enemy/Shock Sweeper/death.png<>uid://cn0v4tvtardyc::::res://Scenes/Entities/Enemy/shock_sweper.gdshader<>uid://chskk86ws4f5t::::res://Assets/Sprites/Enemy/Shock Sweeper/slam with VFX.png<>uid://ddptqc8cwofty::::res://Assets/Sprites/Enemy/Shock Sweeper/shuffe(move).png<>uid://saospuh77l53::::res://Assets/Sprites/Enemy/Shock Sweeper/Sweep with VFX.png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://b845unq6t1sdo::::res://Assets/Sprites/Enemy/Shock Sweeper/Spin Slam with VFX.png<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd
-::res://Scenes/Entities/Itens/::1786625282
-::res://Scenes/Entities/Itens/Consumables/::1786625282
-::res://Scenes/Entities/Itens/Objects/::1786625282
-::res://Scenes/Entities/Player/::1786625282
-hitflash_player.gdshader::Shader::8215054502472659576::1788177836::0::1::::<><><>0<>0<><>::
+::res://Scenes/Entities/Enemy/::1787927282
+shock_sweper.gd::GDScript::6675213508777231846::1787927282::0::1::::<>CharacterBody2D<><>0<>0<><>::
+shock_sweper.tscn::PackedScene::8618118248632947892::1787927282::0::1::::<><><>0<>0<><>::uid://c2dr15wpl0dhu::::res://Scenes/Entities/Enemy/shock_sweper.gd<>uid://ct84dw1urhhqa::::res://Assets/Sprites/Enemy/Shock Sweeper/wake.png<>uid://bv3hn3jlmimgr::::res://Assets/Sprites/Enemy/Shock Sweeper/death.png<>uid://chskk86ws4f5t::::res://Assets/Sprites/Enemy/Shock Sweeper/slam with VFX.png<>uid://ddptqc8cwofty::::res://Assets/Sprites/Enemy/Shock Sweeper/shuffe(move).png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd
+::res://Scenes/Entities/Itens/::1785146044
+::res://Scenes/Entities/Itens/Consumables/::1785146044
+::res://Scenes/Entities/Itens/Objects/::1785146044
+::res://Scenes/Entities/Player/::1787925467
+hitflash_player.gdshader::Shader::8215054502472659576::1787925467::0::1::::<><><>0<>0<><>::
 player-DESKTOP-54M5NTA-2.tscn::PackedScene::6206054672237870040::1787168376::0::1::::<><><>0<>0<><>::uid://ebhx116fmr0o::::res://Scenes/Entities/Player/Player.gd<>uid://dpbo0oav58vtw::::res://Scenes/Entities/Player/hitflash_player.gdshader<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd<>uid://bmfoumepyrau7::::res://Assets/Sprites/Player/assassin/attack 1 with VFX.png<>uid://b8q28hjnc33fu::::res://Assets/Sprites/Player/assassin/attack 2 with VFX.png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://by8le6088fish::::res://Assets/Sprites/Player/assassin/death.png<>uid://bjohr1s6o14ka::::res://Assets/Sprites/Player/assassin/Cross Slice with VFX.png<>uid://bwpbpofrig5ip::::res://Assets/Sprites/Player/assassin/fall.png<>uid://c286es6dvj2vg::::res://Audio/Player/impactMining_000.ogg<>uid://cb5e31r60npda::::res://Audio/Player/impactMining_004.ogg<>uid://c4ecnvkm72gd::::res://Assets/Sprites/Player/assassin/idle.png<>uid://ds6dvqu4lahua::::res://Audio/Player/laserRetro_001.ogg<>uid://dl7u8ypunt3mk::::res://Assets/Sprites/Player/assassin/jump.png<>uid://ck0vdxh30lvl7::::res://Assets/Sprites/Player/assassin/land with VFX.png<>uid://dmcnum6we4eot::::res://Assets/Sprites/Player/assassin/run with VFX.png
 Player-DESKTOP-54M5NTA.gd::GDScript::8284987317252792268::1785353090::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player-DESKTOP-54M5NTA.tscn::PackedScene::2796934239658548725::1785752448::0::1::::<><><>0<>0<><>::
-player-WIN-E6HOE6AT4R5.tscn::PackedScene::5303574166688215440::1788170419::0::1::::<><><>0<>0<><>::uid://ebhx116fmr0o::::res://Scenes/Entities/Player/Player.gd<>uid://dpbo0oav58vtw::::res://Scenes/Entities/Player/hitflash_player.gdshader<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd<>uid://bmfoumepyrau7::::res://Assets/Sprites/Player/assassin/attack 1 with VFX.png<>uid://b8q28hjnc33fu::::res://Assets/Sprites/Player/assassin/attack 2 with VFX.png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://by8le6088fish::::res://Assets/Sprites/Player/assassin/death.png<>uid://cfdpim38li7ig::::res://Assets/Sprites/Player/assassin/Sweep Attack with VFX.png<>uid://bjohr1s6o14ka::::res://Assets/Sprites/Player/assassin/Cross Slice with VFX.png<>uid://bwpbpofrig5ip::::res://Assets/Sprites/Player/assassin/fall.png<>uid://c286es6dvj2vg::::res://Audio/Player/impactMining_000.ogg<>uid://cb5e31r60npda::::res://Audio/Player/impactMining_004.ogg<>uid://c4ecnvkm72gd::::res://Assets/Sprites/Player/assassin/idle.png<>uid://ds6dvqu4lahua::::res://Audio/Player/laserRetro_001.ogg<>uid://dl7u8ypunt3mk::::res://Assets/Sprites/Player/assassin/jump.png<>uid://ck0vdxh30lvl7::::res://Assets/Sprites/Player/assassin/land with VFX.png<>uid://dmcnum6we4eot::::res://Assets/Sprites/Player/assassin/run with VFX.png
-Player.gd::GDScript::283287251703057716::1788178745::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::6206054672237870040::1788178647::0::1::::<><><>0<>0<><>::uid://ebhx116fmr0o::::res://Scenes/Entities/Player/Player.gd<>uid://dpbo0oav58vtw::::res://Scenes/Entities/Player/hitflash_player.gdshader<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd<>uid://bmfoumepyrau7::::res://Assets/Sprites/Player/assassin/attack 1 with VFX.png<>uid://b8q28hjnc33fu::::res://Assets/Sprites/Player/assassin/attack 2 with VFX.png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://by8le6088fish::::res://Assets/Sprites/Player/assassin/death.png<>uid://cfdpim38li7ig::::res://Assets/Sprites/Player/assassin/Sweep Attack with VFX.png<>uid://bjohr1s6o14ka::::res://Assets/Sprites/Player/assassin/Cross Slice with VFX.png<>uid://bwpbpofrig5ip::::res://Assets/Sprites/Player/assassin/fall.png<>uid://c4ecnvkm72gd::::res://Assets/Sprites/Player/assassin/idle.png<>uid://ds6dvqu4lahua::::res://Audio/Player/laserRetro_001.ogg<>uid://dl7u8ypunt3mk::::res://Assets/Sprites/Player/assassin/jump.png<>uid://ck0vdxh30lvl7::::res://Assets/Sprites/Player/assassin/land with VFX.png<>uid://dmcnum6we4eot::::res://Assets/Sprites/Player/assassin/run with VFX.png
-::res://Scenes/Environment/::1786625282
-::res://Scenes/Levels/::1786625282
+Player.gd::GDScript::283287251703057716::1787840152::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6206054672237870040::1787841904::0::1::::<><><>0<>0<><>::uid://ebhx116fmr0o::::res://Scenes/Entities/Player/Player.gd<>uid://dpbo0oav58vtw::::res://Scenes/Entities/Player/hitflash_player.gdshader<>uid://yqb8ew7oy6mm::::res://Scripts/Components/HitBox.gd<>uid://bmfoumepyrau7::::res://Assets/Sprites/Player/assassin/attack 1 with VFX.png<>uid://b8q28hjnc33fu::::res://Assets/Sprites/Player/assassin/attack 2 with VFX.png<>uid://bs5t53eokhlne::::res://Scripts/Components/HurtBox.gd<>uid://by8le6088fish::::res://Assets/Sprites/Player/assassin/death.png<>uid://cfdpim38li7ig::::res://Assets/Sprites/Player/assassin/Sweep Attack with VFX.png<>uid://bjohr1s6o14ka::::res://Assets/Sprites/Player/assassin/Cross Slice with VFX.png<>uid://bwpbpofrig5ip::::res://Assets/Sprites/Player/assassin/fall.png<>uid://c286es6dvj2vg::::res://Audio/Player/impactMining_000.ogg<>uid://cb5e31r60npda::::res://Audio/Player/impactMining_004.ogg<>uid://c4ecnvkm72gd::::res://Assets/Sprites/Player/assassin/idle.png<>uid://ds6dvqu4lahua::::res://Audio/Player/laserRetro_001.ogg<>uid://dl7u8ypunt3mk::::res://Assets/Sprites/Player/assassin/jump.png<>uid://ck0vdxh30lvl7::::res://Assets/Sprites/Player/assassin/land with VFX.png<>uid://dmcnum6we4eot::::res://Assets/Sprites/Player/assassin/run with VFX.png
+::res://Scenes/Environment/::1785146044
+::res://Scenes/Levels/::1787926838
 game_screen-DESKTOP-54M5NTA-2.tscn::PackedScene::623299092090953879::1787167707::0::1::::<><><>0<>0<><>::uid://cuoi2wxcqeeua::::res://Scenes/Entities/Player/player.tscn<>uid://cn4q3sk46wcqa::::res://Scenes/Levels/parallax.tscn<>uid://dp7qqfil3h51b::::res://Assets/Sprites/Environment/Particles/particle.png<>uid://bkac2i3kbi6cy::::res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn
 game_screen-DESKTOP-54M5NTA.tscn::PackedScene::2330516944318363717::1785752931::0::1::::<><><>0<>0<><>::
-game_screen-WIN-E6HOE6AT4R5.tscn::PackedScene::3131690441239355910::1788170419::0::1::::<><><>0<>0<><>::uid://cuoi2wxcqeeua::::res://Scenes/Entities/Player/player.tscn<>uid://cn4q3sk46wcqa::::res://Scenes/Levels/parallax.tscn<>uid://dp7qqfil3h51b::::res://Assets/Sprites/Environment/Particles/particle.png<>uid://bkac2i3kbi6cy::::res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn<>uid://du1xfbt8hxyrk::::res://Scenes/Entities/Enemy/shock_sweper.tscn
-game_screen.tscn::PackedScene::623299092090953879::1788181453::0::1::::<><><>0<>0<><>::uid://cuoi2wxcqeeua::::res://Scenes/Entities/Player/player.tscn<>uid://cn4q3sk46wcqa::::res://Scenes/Levels/parallax.tscn<>uid://dp7qqfil3h51b::::res://Assets/Sprites/Environment/Particles/particle.png<>uid://bkac2i3kbi6cy::::res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn<>uid://du1xfbt8hxyrk::::res://Scenes/Entities/Enemy/shock_sweper.tscn
+game_screen.tscn::PackedScene::623299092090953879::1787926838::0::1::::<><><>0<>0<><>::uid://cuoi2wxcqeeua::::res://Scenes/Entities/Player/player.tscn<>uid://cn4q3sk46wcqa::::res://Scenes/Levels/parallax.tscn<>uid://dp7qqfil3h51b::::res://Assets/Sprites/Environment/Particles/particle.png<>uid://bkac2i3kbi6cy::::res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn<>uid://du1xfbt8hxyrk::::res://Scenes/Entities/Enemy/shock_sweper.tscn
 parallax.tscn::PackedScene::5746185725890225128::1786664895::0::1::::<><><>0<>0<><>::uid://btey0yp4stg11::::res://Assets/Sprites/Environment/Background Parallax/1-Background.png<>uid://dcgaxkvdv04v5::::res://Assets/Sprites/Environment/Background Parallax/2-super far.png<>uid://c70b6mroyo4fi::::res://Assets/Sprites/Environment/Background Parallax/3-far.png<>uid://lht5v7bwddf7::::res://Assets/Sprites/Environment/Background Parallax/4-far light.png<>uid://jyyl2g753qh7::::res://Assets/Sprites/Environment/Background Parallax/5-close.png<>uid://coja407tt7nmq::::res://Assets/Sprites/Environment/Background Parallax/6-close light.png<>uid://dagpbdd3biar2::::res://Assets/Sprites/Environment/Background Parallax/7-tileset down.png<>uid://dd5wnwntxokop::::res://Assets/Sprites/Environment/Background Parallax/7-tileset up.png<>uid://dm7p7j3yfgn5g::::res://Assets/Sprites/Environment/Background Parallax/Ground.png
-::res://Scripts/::1786625282
-::res://Scripts/Components/::1786625282
+::res://Scripts/::1785146044
+::res://Scripts/Components/::1787324443
 damage_label.gd::GDScript::210612582632084273::1786623307::0::1::::<>Label<><>0<>0<><>::
 health_bar_display.gd::GDScript::8762524937223097555::1786667880::0::1::::HealthBarDisplay<>Sprite2D<><>0<>0<><>::
-HitBox.gd::GDScript::1717682185122081216::1788176913::0::1::::Hitbox<>Area2D<><>0<>0<><>::
-HurtBox.gd::GDScript::3712959875961956226::1788179846::0::1::::Hurtbox<>Area2D<><>0<>0<><>::
+HitBox.gd::GDScript::1717682185122081216::1787324443::0::1::::Hitbox<>Area2D<><>0<>0<><>::
+HurtBox.gd::GDScript::3712959875961956226::1786719962::0::1::::Hurtbox<>Area2D<><>0<>0<><>::
