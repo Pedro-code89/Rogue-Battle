@@ -1,5 +1,9 @@
 ## Rogue & Battle
 
+## ⚠️ Assets
+
+As artes e sprites utilizadas no projeto são assets licenciados/adquiridos para uso neste jogo e não estão disponíveis para redistribuição.
+
 # Sobre o Jogo
 
 - Um jogo básico feito a partir da Engine Godot, criado para estudos e para aprimorar minhas habilidades com programação e desenvolvimento de jogos. A ideia é continuar evoluindo o projeto e, futuramente, desenvolver outros jogos com uma qualidade cada vez maior, podendo também publicar alguns deles na área de Game Dev.
