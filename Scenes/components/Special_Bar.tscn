@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dbvo6sv2ie00n"]
+
+[ext_resource type="Script" uid="uid://cip8sieasn6ki" path="res://Scenes/components/special_bar.gd" id="1_dfdiw"]
+[ext_resource type="Texture2D" uid="uid://bd5mksf82i0km" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar1.png" id="2_yahs7"]
+[ext_resource type="Texture2D" uid="uid://bc2ankf82mdwg" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar2.png" id="3_1hdot"]
+[ext_resource type="Texture2D" uid="uid://bgxy4ifqpsr3w" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar3.png" id="4_2e83p"]
+[ext_resource type="Texture2D" uid="uid://bhjtckkbk3prt" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar4.png" id="5_jndc7"]
+[ext_resource type="Texture2D" uid="uid://c63noka8kxf3p" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar5.png" id="6_xqav8"]
+[ext_resource type="Texture2D" uid="uid://v7c563t1c668" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar6.png" id="7_t5miv"]
+[ext_resource type="Texture2D" uid="uid://b7t4gv3nif26x" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar7.png" id="8_3e1q4"]
+[ext_resource type="Texture2D" uid="uid://dqf2r2vdvcw3d" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar8.png" id="9_kkblo"]
+[ext_resource type="Texture2D" uid="uid://lip1mmadvmce" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar9.png" id="10_ud6wp"]
+[ext_resource type="Texture2D" uid="uid://bt5wu8l84wfoh" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar10.png" id="11_g4kqm"]
+[ext_resource type="Texture2D" uid="uid://b087qicd22tqb" path="res://Assets/Sprites/Components/SpecialBar/Special_Bar11.png" id="12_qnhuc"]
+
+[node name="SpecialBarDisplay" type="Sprite2D" unique_id=1564824084]
+script = ExtResource("1_dfdiw")
+recarga_texturas = Array[Texture2D]([ExtResource("2_yahs7"), ExtResource("3_1hdot"), ExtResource("4_2e83p"), ExtResource("5_jndc7"), ExtResource("6_xqav8"), ExtResource("7_t5miv"), ExtResource("8_3e1q4"), ExtResource("9_kkblo"), ExtResource("10_ud6wp"), ExtResource("11_g4kqm"), ExtResource("12_qnhuc")])

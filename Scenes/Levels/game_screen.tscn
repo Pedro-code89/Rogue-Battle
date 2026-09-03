@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn4q3sk46wcqa" path="res://Scenes/Levels/parallax.tscn" id="2_kj4ho"]
 [ext_resource type="Texture2D" uid="uid://dp7qqfil3h51b" path="res://Assets/Sprites/Environment/Particles/particle.png" id="3_b2xqi"]
 [ext_resource type="PackedScene" uid="uid://bkac2i3kbi6cy" path="res://Assets/Sprites/Components/HealthBar/health_bar_display.tscn" id="4_yqivf"]
+[ext_resource type="PackedScene" uid="uid://dbvo6sv2ie00n" path="res://Scenes/components/Special_Bar.tscn" id="5_g4ofe"]
 [ext_resource type="PackedScene" uid="uid://du1xfbt8hxyrk" path="res://Scenes/Entities/Enemy/shock_sweper.tscn" id="5_hjsve"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b2xqi"]
@@ -47,7 +48,7 @@ visibility_layer = 3
 [node name="Player" parent="." unique_id=168116629 instance=ExtResource("1_jtgf1")]
 visibility_layer = 6
 z_index = 1
-position = Vector2(74, 175)
+position = Vector2(74, 177)
 collision_mask = 4
 
 [node name="Particles" type="GPUParticles2D" parent="." unique_id=470792141]
@@ -87,10 +88,12 @@ shape = SubResource("RectangleShape2D_hjsve")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1046952107]
 
 [node name="HealthBar_display" parent="HUD" unique_id=1881294647 node_paths=PackedStringArray("target") instance=ExtResource("4_yqivf")]
-position = Vector2(50, 235)
+position = Vector2(50, 229)
+target = NodePath("../../Player")
+
+[node name="SpecialBarDisplay" parent="HUD" unique_id=1564824084 node_paths=PackedStringArray("target") instance=ExtResource("5_g4ofe")]
+position = Vector2(45, 252)
 target = NodePath("../../Player")
 
 [node name="ShockSweper" parent="." unique_id=628592701 instance=ExtResource("5_hjsve")]
 position = Vector2(277, 171)
-hp = 120
-max_hp = 120

@@ -11,6 +11,7 @@ enum PlayerState {
 	ATTACK1,
 	ATTACK2,
 	ATTACK3,
+	ATTACK_SPECIAL,
 	DASH,
 	DEATH
 }
@@ -30,15 +31,28 @@ const DASH_SPEED: float = 300.0
 const DASH_DURATION: float = 0.3
 const DASH_COOLDOWN: float = 0.8
 
-# Cooldown do golpe especial (Attack3)
+# Cooldown do golpe especial antigo (Attack3)
 const ATTACK3_COOLDOWN: float = 3.0
 
-# Deslizada do golpe especial (Attack3)
-const ATTACK3_SLIDE_SPEED: float = 200.0
-const ATTACK3_SLIDE_FRICTION: float = 900.0
+# Deslocamento do golpe especial antigo (Attack3)
+const ATTACK3_SLASH_SPEED: float = 200.0     # velocidade durante o avanço
+const ATTACK3_SLASH_DISTANCE: float = 30.0   # distância total percorrida
+const ATTACK3_SLIDE_FRICTION: float = 900.0  # freio depois de bater a distância
 
 # Tempo sem poder dashar depois de usar o Attack3 (pra não ficar roubado)
 const ATTACK3_DASH_LOCK: float = 2.0
+
+# Deslocamento do golpe especial NOVO (Attack_Special) - slash que percorre distância grande
+const ATTACK_SPECIAL_SPEED: float = 1800.0
+const ATTACK_SPECIAL_DISTANCE: float = 30.0
+const ATTACK_SPECIAL_SLIDE_FRICTION: float = 7500.0
+const ATTACK_SPECIAL_DASH_LOCK: float = 2.0
+const ATTACK_SPECIAL_DAMAGE: float = 50.0
+
+# Carga do Attack_Special - baseada em dano dado e recebido, não em tempo
+const SPECIAL_CHARGE_MAX: float = 100.0
+const CHARGE_PER_HIT_DEALT: float = 5.0      # quanto carrega ao acertar um inimigo
+const CHARGE_PER_HIT_TAKEN_MULT: float = 1.0  # multiplica o dano recebido pra virar carga
 
 # Trava bem curta do dash durante o hit-stun
 const HIT_STUN_DASH_LOCK: float = 0.2
@@ -69,6 +83,14 @@ var hit_slow_timer: float = 0.0
 var can_attack3: bool = true
 var attack3_cooldown_timer: float = 1.0
 
+# Controle do deslocamento do Attack3
+var attack3_traveled: float = 0.0
+var attack3_direction: float = 1.0
+
+# Controle do Attack_Special (carga + deslocamento)
+var special_charge: float = 0.0
+var attack_special_traveled: float = 0.0
+var attack_special_direction: float = 1.0
 
 
 func _ready() -> void:
@@ -76,6 +98,23 @@ func _ready() -> void:
 	hp_changed.emit(hp, max_hp)
 	camera2D = get_node("Camera2D")
 	cameraShakeNoise = FastNoiseLite.new()
+
+	special_charge = SPECIAL_CHARGE_MAX  # DEBUG: força carga cheia pra testar o T isolado (remover depois)
+
+	# conecta os hitboxes de ataque pra somar carga do especial quando acertam alguém
+	$AttackPivot/HitBox.area_entered.connect(_on_attack_hit)
+	$AttackPivot2/HitBox2.area_entered.connect(_on_attack_hit)
+	$AttackPivot3/HitBox3.area_entered.connect(_on_attack_hit)
+
+
+func _on_attack_hit(target: Node) -> void:
+	if target == null:
+		return
+
+	add_special_charge(CHARGE_PER_HIT_DEALT)
+
+func add_special_charge(amount: float) -> void:
+	special_charge = min(special_charge + amount, SPECIAL_CHARGE_MAX)
 
 
 func _physics_process(delta: float) -> void:
@@ -99,38 +138,29 @@ func _physics_process(delta: float) -> void:
 	match status:
 		PlayerState.IDLE:
 			idle_state()
-
 		PlayerState.RUN:
 			run_state()
-
 		PlayerState.JUMP:
 			jump_state()
-
 		PlayerState.FALL:
 			fall_state()
-
 		PlayerState.LAND:
 			land_state()
-
 		PlayerState.ATTACK1:
 			attack1_state()
-
 		PlayerState.ATTACK2:
 			attack2_state()
-
 		PlayerState.ATTACK3:
 			attack3_state(delta)
-
+		PlayerState.ATTACK_SPECIAL:
+			attack_special_state(delta)
 		PlayerState.DEATH:
 			death_state()
-
 		PlayerState.DASH:
 			dash_state(delta)
 
 	move_and_slide()
 
-
-# RODA QUANDO TROCA
 
 func go_to_idle_state():
 	status = PlayerState.IDLE
@@ -140,7 +170,6 @@ func go_to_idle_state():
 
 func go_to_run_state():
 	status = PlayerState.RUN
-
 	if AnimationCharacter.animation != "Run":
 		AnimationCharacter.play("Run")
 		AnimationControl.play("run_assasin")
@@ -181,23 +210,42 @@ func go_to_attack2_state():
 	$AttackPivot/HitBox.damage = get_attack_damage()
 	velocity.x = 0
 
+
 func go_to_attack3_state():
 	status = PlayerState.ATTACK3
 	AnimationCharacter.play("Attack_Slash")
 	AnimationControl.play("attack3_slash_assasin")
 	$AttackPivot2/HitBox2.damage = 15.0
 
-	# Impulso da deslizada, na direção que o personagem já está olhando
-	var slide_direction := -1.0 if AnimationCharacter.flip_h else 1.0
-	velocity.x = slide_direction * ATTACK3_SLIDE_SPEED
+	attack3_direction = -1.0 if AnimationCharacter.flip_h else 1.0
+	attack3_traveled = 0.0
+	velocity.x = attack3_direction * ATTACK3_SLASH_SPEED
 
-	# Ativa o cooldown assim que o golpe especial começa
 	can_attack3 = false
 	attack3_cooldown_timer = ATTACK3_COOLDOWN
 
-	# Trava o dash por um tempo, pra não poder cancelar/emendar o golpe especial nele
 	can_dash = false
 	dash_cooldown_timer = max(dash_cooldown_timer, ATTACK3_DASH_LOCK)
+
+
+func go_to_attack_special_state():
+	print("DEBUG: entrou em ATTACK_SPECIAL (status trocado com sucesso)")
+	status = PlayerState.ATTACK_SPECIAL
+	AnimationCharacter.play("Attack_Special")
+	AnimationControl.play("attack_special")
+	$AttackPivot3/HitBox3.damage = ATTACK_SPECIAL_DAMAGE
+
+	attack_special_direction = -1.0 if AnimationCharacter.flip_h else 1.0
+	attack_special_traveled = 0.0
+	velocity.x = attack_special_direction * ATTACK_SPECIAL_SPEED
+
+	special_charge = 0.0  # zera a carga ao usar o especial
+
+	can_dash = false
+	dash_cooldown_timer = max(dash_cooldown_timer, ATTACK_SPECIAL_DASH_LOCK)
+
+	var camera_tween = get_tree().create_tween()
+	camera_tween.tween_method(StartCameraShake, 5.0, 1.0, 0.4)
 
 func go_to_death_state():
 	status = PlayerState.DEATH
@@ -215,13 +263,11 @@ func go_to_dash_state():
 	dash_timer = DASH_DURATION
 
 	var input_dir := Input.get_axis("move_left", "move_right")
-
 	if input_dir != 0:
 		dash_direction = input_dir
 	else:
 		dash_direction = -1.0 if AnimationCharacter.flip_h else 1.0
 
-	# Vira o personagem e o AttackPivot pra direção do dash
 	if dash_direction < 0:
 		AnimationCharacter.flip_h = true
 		$AttackPivot.position.x = -12
@@ -235,33 +281,30 @@ func go_to_dash_state():
 	AnimationControl.play("dash_assasin")
 
 
-# FUNÇÕES QUE RODAM CONSTANTEMENTE
-
 func idle_state():
 	move()
-
 	if not is_on_floor():
 		go_to_fall_state()
 		return
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	var direction := Input.get_axis("move_left", "move_right")
-
 	if direction != 0:
 		go_to_run_state()
 		return
-
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
 		return
-
+	if Input.is_action_just_pressed("attack_special"):
+		print("DEBUG: 'attack_special' (T) detectado no IDLE | special_charge = ", special_charge, " / ", SPECIAL_CHARGE_MAX)
+		if special_charge >= SPECIAL_CHARGE_MAX:
+			go_to_attack_special_state()
+			return
 	if Input.is_action_just_pressed("mouse_right") and can_attack3:
+		print("DEBUG: 'mouse_right' detectado no IDLE -> vai pro ATTACK3 (slash)")
 		go_to_attack3_state()
 		return
-
 	if Input.is_action_just_pressed("mouse_left"):
 		go_to_attack1_state()
 		return
@@ -269,29 +312,28 @@ func idle_state():
 
 func run_state():
 	move()
-
 	if not is_on_floor():
 		go_to_fall_state()
 		return
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	var direction := Input.get_axis("move_left", "move_right")
-
 	if direction == 0 and velocity.x == 0:
 		go_to_idle_state()
 		return
-
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
 		return
-
+	if Input.is_action_just_pressed("attack_special"):
+		print("DEBUG: 'attack_special' (T) detectado no RUN | special_charge = ", special_charge, " / ", SPECIAL_CHARGE_MAX)
+		if special_charge >= SPECIAL_CHARGE_MAX:
+			go_to_attack_special_state()
+			return
 	if Input.is_action_just_pressed("mouse_right") and can_attack3:
+		print("DEBUG: 'mouse_right' detectado no RUN -> vai pro ATTACK3 (slash)")
 		go_to_attack3_state()
 		return
-
 	if Input.is_action_just_pressed("mouse_left"):
 		go_to_attack1_state()
 		return
@@ -299,16 +341,12 @@ func run_state():
 
 func jump_state():
 	move()
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump_count:
 		go_to_jump_state()
 		return
-
-	# Quando começa a descer, vai direto para FALL
 	if velocity.y > 0:
 		go_to_fall_state()
 		return
@@ -316,11 +354,9 @@ func jump_state():
 
 func fall_state():
 	move()
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	if is_on_floor():
 		jump_count = 0
 		go_to_land_state()
@@ -334,17 +370,13 @@ func land_state():
 func attack1_state():
 	face_mouse()
 	velocity.x = 0
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	if Input.is_action_just_pressed("mouse_left"):
 		buffered_attack = true
-
 	var total_frames = AnimationCharacter.sprite_frames.get_frame_count("Attack_1")
 	var current_frames = AnimationCharacter.frame
-
 	if buffered_attack and current_frames >= total_frames * 0.8:
 		buffered_attack = false
 		go_to_attack2_state()
@@ -354,39 +386,61 @@ func attack1_state():
 func attack2_state():
 	face_mouse()
 	velocity.x = 0
-
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	if Input.is_action_just_pressed("mouse_left"):
 		buffered_attack = true
-
 	var total_frames = AnimationCharacter.sprite_frames.get_frame_count("Attack_2")
 	var current_frames = AnimationCharacter.frame
-
 	if buffered_attack and current_frames >= total_frames * 0.7:
 		buffered_attack = false
 		go_to_attack1_state()
 		return
 
+
 func attack3_state(delta: float):
-	velocity.x = move_toward(velocity.x, 0, ATTACK3_SLIDE_FRICTION * delta)
+	if attack3_traveled < ATTACK3_SLASH_DISTANCE:
+		attack3_traveled += ATTACK3_SLASH_SPEED * delta
+		velocity.x = attack3_direction * ATTACK3_SLASH_SPEED
+		if is_on_wall():
+			attack3_traveled = ATTACK3_SLASH_DISTANCE
+	else:
+		velocity.x = move_toward(velocity.x, 0, ATTACK3_SLIDE_FRICTION * delta)
 
 	if Input.is_action_just_pressed("dash") and can_dash:
 		go_to_dash_state()
 		return
-
 	if Input.is_action_just_pressed("mouse_left"):
 		buffered_attack = true
-
 	var total_frames = AnimationCharacter.sprite_frames.get_frame_count("Attack_Slash")
+	var current_frames = AnimationCharacter.frame
+	if buffered_attack and current_frames >= total_frames * 0.7:
+		buffered_attack = false
+		go_to_attack1_state()
+		return
+
+
+func attack_special_state(delta: float):
+	if attack_special_traveled < ATTACK_SPECIAL_DISTANCE:
+		attack_special_traveled += ATTACK_SPECIAL_SPEED * delta
+		velocity.x = attack_special_direction * ATTACK_SPECIAL_SPEED
+		if is_on_wall():
+			attack_special_traveled = ATTACK_SPECIAL_DISTANCE
+	else:
+		velocity.x = move_toward(velocity.x, 0, ATTACK_SPECIAL_SLIDE_FRICTION * delta)
+
+	if Input.is_action_just_pressed("attack_special"):
+		buffered_attack = true
+
+	var total_frames = AnimationCharacter.sprite_frames.get_frame_count("Attack_Special")
 	var current_frames = AnimationCharacter.frame
 
 	if buffered_attack and current_frames >= total_frames * 0.7:
 		buffered_attack = false
 		go_to_attack1_state()
 		return
+
 
 func death_state():
 	velocity.x = 0
@@ -395,41 +449,32 @@ func death_state():
 func dash_state(delta: float):
 	velocity.x = dash_direction * DASH_SPEED
 	velocity.y = 0
-
 	dash_timer -= delta
-
 	if dash_timer <= 0:
 		is_dashing = false
 		dash_cooldown_timer = DASH_COOLDOWN
-
 		if is_on_floor():
 			go_to_idle_state()
 		else:
 			go_to_fall_state()
-
 		return
+
 
 func get_attack_damage() -> int:
 	return randi_range(5, 8)
 
-# FUNÇÃO DE MOVIMENTO / FUNÇÃO BÁSICA
 
 func move():
 	var direction := Input.get_axis("move_left", "move_right")
-
 	var current_speed = SPEED
-
 	if Input.is_action_pressed("run"):
 		current_speed = SPEED_RUN
-
 	if hit_slow_timer > 0:
 		current_speed *= hit_slow_multiplier
-
 	if direction:
 		velocity.x = direction * current_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	if direction < 0:
 		AnimationCharacter.flip_h = true
 		$AttackPivot.position.x = -10
@@ -437,9 +482,9 @@ func move():
 		AnimationCharacter.flip_h = false
 		$AttackPivot.position.x = 10
 
+
 func face_mouse() -> void:
 	var mouse_pos := get_global_mouse_position()
-
 	if mouse_pos.x < global_position.x:
 		AnimationCharacter.flip_h = true
 		$AttackPivot.position.x = -10
@@ -447,29 +492,22 @@ func face_mouse() -> void:
 		AnimationCharacter.flip_h = false
 		$AttackPivot.position.x = 10
 
+
 func take_damage(amount: int) -> void:
 	if status == PlayerState.DEATH:
 		return
-
 	if is_dashing:
 		return
-
-	# Invencível durante o golpe especial (Attack3)
 	if status == PlayerState.ATTACK3:
 		return
 
 	hp = clampi(hp - amount, 0, max_hp)
-
 	hp_changed.emit(hp, max_hp)
-
 	if hp <= 0:
 		die()
 
 	hit_slow_timer = hit_slow_duration
-	velocity.x = 0  # corta o impulso atual pra sentir o travamento na hora do hit
-
-	hit_slow_timer = hit_slow_duration
-	velocity.x = 0  # corta o impulso atual pra sentir o travamento na hora do hit
+	velocity.x = 0
 
 	can_dash = false
 	dash_cooldown_timer = max(dash_cooldown_timer, HIT_STUN_DASH_LOCK)
@@ -486,28 +524,19 @@ func take_damage(amount: int) -> void:
 	newDamageLabel.text = str(amount)
 	newDamageLabel.global_position = global_position + Vector2(-25, -70)
 
-	get_tree().current_scene.call_deferred(
-		"add_child",
-		newDamageLabel
-	)
+	get_tree().current_scene.call_deferred("add_child", newDamageLabel)
+
 
 func die() -> void:
 	go_to_death_state()
 
+
 func play_death_fade() -> void:
 	var tween = create_tween()
-
 	tween.tween_interval(0.4)
-	tween.tween_property(
-		AnimationCharacter,
-		"modulate:a",
-		0.0,
-		DEATH_FADE_DURATION
-	)
+	tween.tween_property(AnimationCharacter, "modulate:a", 0.0, DEATH_FADE_DURATION)
+	tween.tween_callback(func(): set_physics_process(false))
 
-	tween.tween_callback(
-		func(): set_physics_process(false)
-	)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	match AnimationCharacter.animation:
@@ -517,15 +546,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 				go_to_attack2_state()
 			else:
 				go_to_idle_state()
-
 		"Attack_2":
 			if buffered_attack:
 				buffered_attack = false
 				go_to_attack1_state()
 			else:
 				go_to_idle_state()
-
 		"Attack_Slash":
+			if buffered_attack:
+				buffered_attack = false
+				go_to_attack1_state()
+			else:
+				go_to_idle_state()
+		"Attack_Special":
 			if buffered_attack:
 				buffered_attack = false
 				go_to_attack1_state()
@@ -534,11 +567,12 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"Land":
 			go_to_idle_state()
 
+
 func flash_hit():
 	FlashHit.play("flash_hit")
 
+
 func StartCameraShake(intensity: float):
 	var cameraOffset = cameraShakeNoise.get_noise_1d(Time.get_ticks_msec()) * intensity
-
 	camera2D.offset.x = cameraOffset
 	camera2D.offset.y = cameraOffset

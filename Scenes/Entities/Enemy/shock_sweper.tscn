@@ -375,7 +375,7 @@ animations = [{
 size = Vector2(11, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18m6o"]
-radius = 138.05795
+radius = 196.01021
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4dw0"]
 size = Vector2(16, 23)
@@ -709,8 +709,6 @@ size = Vector2(66, 20)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_ehjd3")
-hp = 70
-max_hp = 70
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=796454653]
 texture_filter = 1
@@ -725,7 +723,6 @@ position = Vector2(4.5, 6)
 shape = SubResource("RectangleShape2D_18m6o")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1446023040]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=119724510]
 shape = SubResource("CircleShape2D_18m6o")

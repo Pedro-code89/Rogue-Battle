@@ -1,8 +1,2 @@
-res://Scenes/Levels/game_screen.tscn
-res://Scenes/Entities/Player/hitflash_player.gdshader
-res://Scenes/Entities/Enemy/shock_sweper.gdshader
 res://Scenes/Entities/Enemy/shock_sweper.gd
-res://Scenes/Entities/Enemy/shock_sweper.tscn
-res://Scenes/Entities/Player/player.tscn
 res://Scenes/Entities/Player/Player.gd
-res://Scripts/Components/HurtBox.gd

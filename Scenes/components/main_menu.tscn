@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://by22i4fs3iqwl"]
+
+[ext_resource type="Script" uid="uid://smb0o8s0nlql" path="res://Scenes/components/main_menu.gd" id="1_u0nyk"]
+[ext_resource type="Texture2D" uid="uid://cyk6namoqo7n4" path="res://Assets/Sprites/Components/Menu/Play-Button.png" id="2_opuf8"]
+[ext_resource type="Texture2D" uid="uid://blui18frkb2jb" path="res://Assets/Sprites/Components/Menu/Quit-Button1.png" id="3_g85r2"]
+[ext_resource type="Texture2D" uid="uid://c4osbbd8i0bpj" path="res://Assets/Sprites/Components/Menu/Quit-Button2.png" id="4_4hbho"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_14gw8"]
+
+[node name="MainMenu" type="Control" unique_id=2090724345]
+material = SubResource("CanvasItemMaterial_14gw8")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0nyk")
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=926233039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -70.0
+offset_right = 110.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HContainer" type="VBoxContainer" parent="MainContainer" unique_id=1942346253]
+custom_minimum_size = Vector2(110, 64)
+custom_maximum_size = Vector2(110, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VContainer" type="VBoxContainer" parent="MainContainer/HContainer" unique_id=1755591089]
+layout_mode = 2
+alignment = 1
+
+[node name="StartBtn" type="TextureButton" parent="MainContainer/HContainer/VContainer" unique_id=685332351]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_opuf8")
+
+[node name="QuitBtn" type="TextureButton" parent="MainContainer/HContainer/VContainer" unique_id=241611436]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_g85r2")
+texture_pressed = ExtResource("4_4hbho")
+texture_hover = ExtResource("4_4hbho")
+
+[node name="MadeBy" type="VBoxContainer" parent="." unique_id=1410179522]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.5
+offset_top = -40.0
+offset_right = 59.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MadeBy" unique_id=1299138616]
+layout_mode = 2
+text = "Feito por Pedro"
+
+[connection signal="pressed" from="MainContainer/HContainer/VContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MainContainer/HContainer/VContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
